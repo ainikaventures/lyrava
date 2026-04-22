@@ -1,0 +1,37 @@
+---
+interface Props {
+  size?: number;
+  withWordmark?: boolean;
+  class?: string;
+}
+const { size = 32, withWordmark = true, class: className = "" } = Astro.props;
+---
+
+<a
+  href="/"
+  class:list={["group inline-flex items-center gap-2.5", className]}
+  aria-label="Lyrava — home"
+>
+  <span
+    class="relative inline-flex items-center justify-center rounded-lg ring-1 ring-white/10 bg-ink-deep overflow-hidden"
+    style={`width:${size}px;height:${size}px`}
+  >
+    <img
+      src="/logo.jpg"
+      alt=""
+      width={size}
+      height={size}
+      decoding="async"
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+    <span
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-inset ring-glow-400/0 group-hover:ring-glow-400/30 transition"
+    ></span>
+  </span>
+  {withWordmark && (
+    <span class="font-display text-xl tracking-tight text-cloud">
+      Lyrava
+    </span>
+  )}
+</a>

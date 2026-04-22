@@ -1,0 +1,209 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
+import ServiceHero from "@components/ServiceHero.astro";
+import Steps from "@components/Steps.astro";
+import ToolGrid from "@components/ToolGrid.astro";
+import UseCaseList from "@components/UseCaseList.astro";
+import FAQ from "@components/FAQ.astro";
+import CTACard from "@components/CTACard.astro";
+import { serviceSchema } from "@lib/seo";
+
+const slug = "ai-agents-chatbots";
+const title = "AI Agents & Chatbots";
+const description =
+  "Custom AI agents and chatbots powered by GPT-4 and Claude — grounded in your real documents, evaluated against real user questions, and shipped with the guardrails that stop them from hallucinating in front of customers.";
+
+const seo = {
+  title: `AI Agents & Chatbot Development — Lyrava`,
+  description:
+    "Custom AI agent development for UK and US teams. GPT-4 and Claude-powered support bots, internal knowledge agents, and voice assistants — built with RAG, evals, and proper guardrails.",
+  path: `/services/${slug}`,
+  keywords: [
+    "AI agent development",
+    "custom chatbot development",
+    "GPT-4 chatbot",
+    "Claude AI agent",
+    "RAG retrieval augmented generation",
+    "LangChain consultant",
+  ],
+  jsonLd: [serviceSchema({ name: title, description, slug })],
+};
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "AI Agents & Chatbots", href: `/services/${slug}` },
+];
+
+const steps = [
+  {
+    title: "Define what \"good\" looks like",
+    body: "Before we touch a model, we agree on the eval set: 30–100 real questions the agent must answer well, and the criteria for what \"well\" means. Without this, you can't tell if an upgrade actually improves anything.",
+  },
+  {
+    title: "Ground it in your real data",
+    body: "Most agent failures are retrieval failures, not model failures. We build a RAG pipeline from your actual sources — Notion, Confluence, Help Scout, Intercom, Zendesk, PDFs, transcripts — with chunking, re-ranking, and citation that lets users verify what the agent says.",
+  },
+  {
+    title: "Wire in guardrails and escalation",
+    body: "Topic filters so it stays in lane. Refusal patterns for things it shouldn't answer. PII redaction in logs. Hand-off rules to a human (with full transcript) when confidence is low or the user asks. Pricing and contractual questions get escalated by default.",
+  },
+  {
+    title: "Ship, evaluate, iterate",
+    body: "We deploy behind a feature flag, A/B against your existing flow if there is one, and run the eval set weekly. You see exactly which questions the agent improved on, which it regressed on, and where the next investment goes.",
+  },
+];
+
+const tools = [
+  { name: "OpenAI", tag: "GPT-4 / GPT-5 / o-series" },
+  { name: "Anthropic", tag: "Claude 4.x family" },
+  { name: "LangChain", tag: "orchestration" },
+  { name: "LlamaIndex", tag: "RAG pipelines" },
+  { name: "Pinecone", tag: "vector store" },
+  { name: "pgvector", tag: "Postgres-native" },
+  { name: "Vercel AI SDK", tag: "streaming UIs" },
+  { name: "Voiceflow", tag: "no-code agents" },
+  { name: "Twilio / Vapi", tag: "voice agents" },
+  { name: "Helicone / Langfuse", tag: "observability" },
+  { name: "Ragas / Promptfoo", tag: "evals" },
+  { name: "Custom code", tag: "Python / TypeScript" },
+];
+
+const cases = [
+  {
+    metric: "67%",
+    metricLabel: "Tier-1 ticket deflection",
+    title: "Customer support agent for a UK fintech",
+    context:
+      "A 90-person fintech was answering 1,400 support tickets a week, two-thirds of which were variations on the same 30 questions about KYC, statements, and limits.",
+    outcome:
+      "We built a Claude-powered support agent grounded in the help centre and policy docs, with hard escalation rules for anything involving money movement. Two months in, it resolves 67% of incoming tickets with no human in the loop and a 4.6/5 satisfaction score.",
+  },
+  {
+    metric: "12 → 1",
+    metricLabel: "Hours per RFP response",
+    title: "Internal knowledge agent for a US consultancy",
+    context:
+      "Senior consultants were spending 12 hours per week digging through past projects, case studies, and proposals to assemble RFP responses.",
+    outcome:
+      "An internal Claude agent indexed 8 years of past proposals, case studies, and SOWs. It now drafts the first version of every RFP response in under a minute, with citations to the source documents. Consultants spend 1–2 hours editing instead of 12 hours building from scratch.",
+  },
+  {
+    metric: "24/7",
+    metricLabel: "Voice agent coverage",
+    title: "Inbound voice agent for a UK trades business",
+    context:
+      "An emergency-plumbing business was missing 30% of after-hours calls — and losing the jobs to competitors who answered.",
+    outcome:
+      "A voice agent (Vapi + GPT-4) now handles after-hours calls: triages urgency, captures address and issue, books a slot in the scheduling system, and pages the on-call engineer if it's a true emergency. After-hours conversion rate went from 22% to 71%.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Will it hallucinate?",
+    answer:
+      "Not if it's built right. The standard pattern that hallucinates is \"give the model a question and hope.\" Our pattern is retrieval-augmented: the model can only answer using passages we've fetched from your real documents, and every answer cites the source. It will refuse questions it doesn't have grounded data for — which is the correct behaviour, even if it feels unfamiliar.",
+  },
+  {
+    question: "OpenAI or Claude — which should we use?",
+    answer:
+      "Both are excellent and the gap is smaller than vendor marketing suggests. <strong>Claude</strong> tends to do better on long-document reasoning, careful instruction-following, and cases where you want it to refuse or hand off. <strong>OpenAI</strong> often wins on agentic tool use, multimodal (vision), and the o-series for complex reasoning. We frequently ship with both behind a single API and route per query type. We have no reseller relationship with either.",
+  },
+  {
+    question: "What happens to our private data?",
+    answer:
+      "By default, both OpenAI's API and Anthropic's API contractually do not train on your data. Your documents stay in your vector store (we usually self-host pgvector inside your infrastructure for sensitive cases). For regulated industries we can run open models — Llama, Mistral — on your own infrastructure with no third-party API calls at all.",
+  },
+  {
+    question: "Can we run it on-prem or in our own cloud?",
+    answer:
+      "Yes. Frontier models (GPT, Claude) call out to API endpoints — but everything around them (the vector store, the orchestration, the logging, the UI) runs in your infrastructure. For air-gapped deployments we use open-weight models (Llama 3.x, Mistral, Qwen) deployed on your own GPU instances.",
+  },
+  {
+    question: "How do you handle GDPR and SOC 2 requirements?",
+    answer:
+      "Standard practice on every engagement: PII redaction before any data goes to a model, regional API endpoints (EU for UK/EU clients), a Data Processing Agreement on your terms, and full audit logging of every query and response. We can produce the documentation auditors need — we've been through SOC 2 reviews on the customer side.",
+  },
+  {
+    question: "What's the smallest agent project you'll take?",
+    answer:
+      "A 2–3 week proof-of-value: one well-scoped use case, one source corpus, one channel (web widget, Slack, or internal tool). Usually £8k–£15k / $10k–$18k. If it works we extend; if it doesn't we tell you why and stop.",
+  },
+];
+---
+
+<BaseLayout {...seo}>
+  <ServiceHero
+    eyebrow="AI agents & chatbots"
+    title="Custom AI that actually answers"
+    accent="— not vague chat that escalates everything."
+    lede="Most chatbots fail because they're stitched together from a script and a vague prompt. We build agents grounded in your real documents, evaluated against your real questions, with the guardrails that stop them embarrassing you in front of a customer."
+    breadcrumbs={breadcrumbs}
+  />
+
+  <Section padding="md">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <span class="eyebrow">The problem</span>
+        <h2 class="mt-4 text-display-lg text-balance">
+          The chatbot you tried last year was
+          <span class="italic text-starlight-200">a glorified contact form.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-7 space-y-5 text-cloud/75 text-pretty">
+        <p>
+          Most off-the-shelf chatbots do one of two things badly. They either pattern-match
+          on keywords and dump the user into a phone-tree of pre-written replies, or
+          they're a thin wrapper around a generic LLM that confidently invents shipping
+          policies you don't have.
+        </p>
+        <p>
+          The shape of a useful AI agent is different. It's grounded in <em>your</em>
+          actual content — help centre, policy docs, past tickets, product spec, internal
+          wiki. It cites where its answers come from. It refuses when it doesn't know. It
+          escalates to a human, with the full transcript, the moment a query crosses a
+          threshold you've defined. And it improves measurably over time because someone
+          is running an eval suite against it every week.
+        </p>
+        <p>
+          Building that takes more than wiring an API key into Intercom. It takes
+          retrieval engineering, prompt engineering, eval discipline, and a conversation
+          about what the agent is — and isn't — allowed to do.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section padding="md">
+    <Steps
+      steps={steps}
+      title="How we build agents that ship"
+      blurb="The standard 4-week proof-of-value: define quality, ground it in your data, wire guardrails, deploy with measurement. Extend or stop based on the numbers — not on a demo that wowed someone in a meeting."
+    />
+  </Section>
+
+  <Section padding="md">
+    <ToolGrid
+      tools={tools}
+      title="Stack"
+      blurb="We pick the model and the surrounding tooling per use case. Streaming web chat needs different infrastructure to overnight document processing. Voice agents need different infrastructure to both."
+    />
+  </Section>
+
+  <Section padding="md">
+    <UseCaseList cases={cases} />
+  </Section>
+
+  <Section padding="md">
+    <FAQ faqs={faqs} />
+  </Section>
+
+  <Section padding="xl">
+    <CTACard
+      title="See what an agent grounded in your data could do."
+      body="Send us 10–20 questions a customer or colleague typically asks, and we'll build a working prototype against your real documents in a week — flat fee, refunded if you don't see a path to value."
+    />
+  </Section>
+</BaseLayout>

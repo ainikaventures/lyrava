@@ -1,0 +1,29 @@
+---
+import { SITE } from "@lib/site";
+interface Props {
+  title?: string;
+  body?: string;
+  primary?: { label: string; href: string };
+  secondary?: { label: string; href: string };
+}
+const {
+  title = "Ready to get a few hours back?",
+  body = "Free 30-minute scoping call. We'll review one process you'd love to automate and tell you — honestly — whether it's worth doing, what it would cost, and what we'd build.",
+  primary = { label: "Book a discovery call", href: "/contact" },
+  secondary = { label: "Or email us directly", href: `mailto:${SITE.email}` },
+} = Astro.props;
+---
+
+<div class="reveal relative overflow-hidden rounded-3xl border border-starlight-200/15 bg-gradient-to-br from-ink-soft via-ink to-ink-deep p-10 md:p-16">
+  <div aria-hidden="true" class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-starlight-200/[0.08] blur-3xl"></div>
+  <div aria-hidden="true" class="absolute -bottom-24 -left-12 h-64 w-64 rounded-full bg-glow-400/[0.08] blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-2xl text-center">
+    <h2 class="text-display-lg text-balance">{title}</h2>
+    <p class="mt-5 text-pretty text-cloud/75">{body}</p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href={primary.href} class="btn-primary">{primary.label}</a>
+      <a href={secondary.href} class="btn-secondary">{secondary.label}</a>
+    </div>
+  </div>
+</div>

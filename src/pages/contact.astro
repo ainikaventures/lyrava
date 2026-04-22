@@ -1,0 +1,459 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
+import SparkBackdrop from "@components/SparkBackdrop.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { SITE, SERVICES } from "@lib/site";
+
+const seo = {
+  title: "Contact — Book a Discovery Call with Lyrava",
+  description:
+    "Book a free 30-minute discovery call. Tell us one process you'd love to automate and we'll tell you — honestly — whether it's worth doing, what it would cost, and what we'd build.",
+  path: "/contact",
+};
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Contact", href: "/contact" },
+];
+
+// Country dropdown — UK + US float to the top of the list
+const countries = [
+  "United Kingdom",
+  "United States",
+  "—",
+  "Australia", "Austria", "Belgium", "Brazil", "Canada", "Czechia", "Denmark",
+  "Finland", "France", "Germany", "Greece", "Hong Kong", "Hungary", "Iceland",
+  "India", "Ireland", "Israel", "Italy", "Japan", "Luxembourg", "Mexico",
+  "Netherlands", "New Zealand", "Norway", "Poland", "Portugal", "Singapore",
+  "South Africa", "South Korea", "Spain", "Sweden", "Switzerland", "UAE",
+  "Other",
+];
+---
+
+<BaseLayout {...seo}>
+  <section class="relative isolate overflow-hidden">
+    <SparkBackdrop subtle={true} />
+    <div class="container-wide pt-12 pb-12 md:pt-16">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="mx-auto mt-10 max-w-3xl text-center">
+        <span class="eyebrow reveal">
+          <span class="h-1.5 w-1.5 rounded-full bg-glow-400 shadow-[0_0_8px_rgba(255,217,138,0.6)]"></span>
+          Get in touch
+        </span>
+        <h1 class="reveal mt-6 text-display-xl text-balance text-cloud">
+          Tell us what you'd
+          <span class="gradient-text italic">love to stop doing manually.</span>
+        </h1>
+        <p class="reveal mt-6 text-pretty text-lg text-cloud/75 md:text-xl">
+          A free 30-minute call. Bring one process. We'll tell you — honestly — whether
+          it's worth automating, what it would cost, and what we'd build. No deck, no
+          follow-up nurture sequence, no pressure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Section padding="md">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <!-- ============================ Contact form -->
+      <div class="lg:col-span-7">
+        <div class="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-6 md:p-10">
+          <!-- Success state shown after JS-handled submit -->
+          <div
+            id="form-success"
+            hidden
+            class="rounded-2xl border border-starlight-200/20 bg-starlight-200/[0.05] p-8 text-center"
+          >
+            <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-starlight-200/30 bg-starlight-200/10 text-starlight-200">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 class="mt-5 text-2xl text-cloud">Got it — talk soon.</h2>
+            <p class="mt-3 text-pretty text-cloud/70">
+              We'll reply within one working day (UK or US hours, whichever is nearest you).
+              In the meantime, you might enjoy the
+              <a href="/blog" class="text-starlight-200 underline-offset-4 hover:underline">blog</a>
+              or our <a href="/services" class="text-starlight-200 underline-offset-4 hover:underline">services overview</a>.
+            </p>
+          </div>
+
+          <form
+            id="contact-form"
+            action="/contact.php"
+            method="POST"
+            novalidate
+            class="space-y-5"
+          >
+            <!-- Honeypot: invisible field that real users won't fill in -->
+            <div class="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+              <label for="website">Website (leave blank)</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="grid gap-5 md:grid-cols-2">
+              <div>
+                <label for="name" class="block text-sm font-medium text-cloud/85">
+                  Your name <span class="text-glow-400" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  class="mt-2 block w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-cloud placeholder:text-cloud/35 focus:border-starlight-200/40 focus:outline-none focus:ring-1 focus:ring-starlight-200/40"
+                  placeholder="Jamie Patel"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-cloud/85">
+                  Work email <span class="text-glow-400" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  class="mt-2 block w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-cloud placeholder:text-cloud/35 focus:border-starlight-200/40 focus:outline-none focus:ring-1 focus:ring-starlight-200/40"
+                  placeholder="jamie@yourcompany.com"
+                />
+              </div>
+
+              <div>
+                <label for="company" class="block text-sm font-medium text-cloud/85">
+                  Company
+                </label>
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  autocomplete="organization"
+                  class="mt-2 block w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-cloud placeholder:text-cloud/35 focus:border-starlight-200/40 focus:outline-none focus:ring-1 focus:ring-starlight-200/40"
+                  placeholder="Your company"
+                />
+              </div>
+
+              <div>
+                <label for="country" class="block text-sm font-medium text-cloud/85">
+                  Country
+                </label>
+                <select
+                  id="country"
+                  name="country"
+                  autocomplete="country-name"
+                  class="mt-2 block w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-cloud focus:border-starlight-200/40 focus:outline-none focus:ring-1 focus:ring-starlight-200/40"
+                >
+                  <option value="">Select…</option>
+                  {countries.map((c) =>
+                    c === "—" ? (
+                      <option disabled>──────────</option>
+                    ) : (
+                      <option value={c}>{c}</option>
+                    ),
+                  )}
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="service" class="block text-sm font-medium text-cloud/85">
+                What do you need help with? <span class="text-glow-400" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="service"
+                name="service"
+                required
+                class="mt-2 block w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-cloud focus:border-starlight-200/40 focus:outline-none focus:ring-1 focus:ring-starlight-200/40"
+              >
+                <option value="">Select a service…</option>
+                {SERVICES.map((s) => (
+                  <option value={s.short}>{s.title}</option>
+                ))}
+                <option value="Something else">Something else / not sure yet</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-cloud/85">
+                Tell us about the process or problem
+                <span class="text-glow-400" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="6"
+                class="mt-2 block w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-cloud placeholder:text-cloud/35 focus:border-starlight-200/40 focus:outline-none focus:ring-1 focus:ring-starlight-200/40"
+                placeholder="What's eating your team's time? Don't worry about precision — bullet points are perfect."
+              ></textarea>
+            </div>
+
+            <!--
+              Math captcha — random operation (+, −, ×, ÷) generated client-side
+              on load and after every failed attempt. The operands and expected
+              answer travel in hidden fields so your contact.php can re-verify
+              server-side; client-only validation isn't enough on its own.
+            -->
+            <div class="rounded-xl border border-white/10 bg-white/[0.025] p-4">
+              <div class="flex items-center justify-between gap-4">
+                <label for="captcha" class="block text-sm font-medium text-cloud/85">
+                  Quick check — what's
+                  <span id="captcha-question" class="font-display text-starlight-200">
+                    loading…
+                  </span>
+                  ? <span class="text-glow-400" aria-hidden="true">*</span>
+                </label>
+                <button
+                  type="button"
+                  id="captcha-refresh"
+                  aria-label="Generate a new question"
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cloud/70 transition hover:bg-white/10 hover:text-cloud"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M23 4v6h-6M1 20v-6h6" />
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                  </svg>
+                </button>
+              </div>
+
+              <input
+                id="captcha"
+                name="captcha_answer"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                required
+                class="mt-3 block w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-cloud placeholder:text-cloud/35 focus:border-starlight-200/40 focus:outline-none focus:ring-1 focus:ring-starlight-200/40"
+                placeholder="Your answer"
+              />
+
+              <!-- Hidden fields for server-side re-verification in contact.php -->
+              <input id="captcha_a" name="captcha_a" type="hidden" value="" />
+              <input id="captcha_b" name="captcha_b" type="hidden" value="" />
+              <input id="captcha_op" name="captcha_op" type="hidden" value="" />
+              <input id="captcha_expected" name="captcha_expected" type="hidden" value="" />
+
+              <p
+                id="captcha-error"
+                hidden
+                role="alert"
+                class="mt-2 text-xs text-glow-300"
+              >
+                That doesn't look right — here's a fresh one.
+              </p>
+            </div>
+
+            <p class="text-xs text-cloud/50">
+              By submitting this form you agree to our
+              <a href="/privacy-policy" class="underline underline-offset-4 hover:text-starlight-200">privacy policy</a>.
+              We'll only use your details to reply about your enquiry — no marketing list, no sharing.
+            </p>
+
+            <button
+              type="submit"
+              class="btn-primary w-full justify-center sm:w-auto"
+            >
+              Send message
+              <svg
+                aria-hidden="true"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <p
+              id="form-error"
+              hidden
+              class="text-sm text-glow-300"
+              role="alert"
+            ></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- ============================ Side panel -->
+      <aside class="lg:col-span-5 space-y-5">
+        <div class="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-7">
+          <h2 class="text-lg text-cloud">Prefer email?</h2>
+          <p class="mt-2 text-sm text-cloud/70">
+            Write to us at
+            <a href={`mailto:${SITE.email}`} class="text-starlight-200 underline-offset-4 hover:underline">
+              {SITE.email}
+            </a>
+            — same inbox, same response time.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-7">
+          <h2 class="text-lg text-cloud">Response time</h2>
+          <p class="mt-2 text-sm text-cloud/70">
+            We reply to every enquiry inside one working day, in either UK or US business
+            hours — whichever is closer to you. If we're a fit, we'll suggest a 30-minute call.
+            If we aren't, we'll tell you and (often) point you to someone who is.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-7">
+          <h2 class="text-lg text-cloud">Skip the form</h2>
+          <p class="mt-2 text-sm text-cloud/70">
+            Already know you want a call? Grab a 30-minute slot directly.
+          </p>
+          <!-- TODO: replace with real Calendly inline embed once the booking link is live.
+               <div class="calendly-inline-widget" data-url="https://calendly.com/lyrava/intro" style="min-width:320px;height:680px;"></div>
+               <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+          -->
+          <a href={`mailto:${SITE.email}?subject=Discovery call`} class="btn-secondary mt-4 w-full justify-center">
+            Email to book
+          </a>
+        </div>
+      </aside>
+    </div>
+  </Section>
+</BaseLayout>
+
+<script is:inline>
+  /**
+   * Contact form: progressively-enhanced submit + math captcha.
+   *
+   * Captcha: random binary operation (+, −, ×, ÷). Operands chosen so the
+   * answer is always a non-negative integer in a sensible range (kids could
+   * solve it; bots without an arithmetic eval can't). We pass operands +
+   * expected answer in hidden fields so contact.php can re-verify server-side
+   * — never trust a client-only check on its own.
+   */
+  (function () {
+    var form = document.getElementById("contact-form");
+    var success = document.getElementById("form-success");
+    var error = document.getElementById("form-error");
+    if (!form || !success || !error) return;
+
+    // ---------------------------- Captcha ----------------------------
+    var qEl = document.getElementById("captcha-question");
+    var input = document.getElementById("captcha");
+    var aEl = document.getElementById("captcha_a");
+    var bEl = document.getElementById("captcha_b");
+    var opEl = document.getElementById("captcha_op");
+    var expEl = document.getElementById("captcha_expected");
+    var refreshBtn = document.getElementById("captcha-refresh");
+    var captchaErr = document.getElementById("captcha-error");
+
+    var OPS = ["+", "-", "×", "÷"];
+    var randInt = function (min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+    function newChallenge() {
+      var op = OPS[randInt(0, 3)];
+      var a, b, answer;
+
+      if (op === "+") {
+        a = randInt(2, 19);
+        b = randInt(2, 19);
+        answer = a + b;
+      } else if (op === "-") {
+        // ensure result is non-negative
+        a = randInt(5, 20);
+        b = randInt(1, a - 1);
+        answer = a - b;
+      } else if (op === "×") {
+        a = randInt(2, 9);
+        b = randInt(2, 9);
+        answer = a * b;
+      } else {
+        // ÷ — pick divisor and result first so dividend divides cleanly
+        var divisor = randInt(2, 9);
+        var result = randInt(2, 9);
+        a = divisor * result;
+        b = divisor;
+        answer = result;
+      }
+
+      qEl.textContent = a + " " + op + " " + b;
+      aEl.value = String(a);
+      bEl.value = String(b);
+      opEl.value = op;
+      expEl.value = String(answer);
+      input.value = "";
+      input.setAttribute("aria-invalid", "false");
+      captchaErr.setAttribute("hidden", "");
+    }
+
+    function validateCaptcha() {
+      var raw = (input.value || "").trim();
+      if (!raw) return false;
+      // accept "−12" minus sign, leading zeros, spaces
+      var n = parseInt(raw.replace(/[^\d-]/g, ""), 10);
+      return !isNaN(n) && String(n) === expEl.value;
+    }
+
+    newChallenge();
+    refreshBtn.addEventListener("click", newChallenge);
+
+    // ---------------------------- Submit ----------------------------
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      error.setAttribute("hidden", "");
+      error.textContent = "";
+
+      // Honeypot trap — silently "succeed" so bots don't learn we caught them
+      var honeypot = form.querySelector('input[name="website"]');
+      if (honeypot && honeypot.value) {
+        form.setAttribute("hidden", "");
+        success.removeAttribute("hidden");
+        return;
+      }
+
+      // Captcha check — block submission, regenerate, and focus the input
+      if (!validateCaptcha()) {
+        input.setAttribute("aria-invalid", "true");
+        captchaErr.removeAttribute("hidden");
+        newChallenge();
+        input.focus();
+        return;
+      }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.setAttribute("disabled", "");
+        submitBtn.textContent = "Sending…";
+      }
+
+      try {
+        var fd = new FormData(form);
+        var res = await fetch(form.action, {
+          method: "POST",
+          body: fd,
+          headers: { "X-Requested-With": "fetch" },
+        });
+
+        if (!res.ok) throw new Error("Server returned " + res.status);
+
+        form.setAttribute("hidden", "");
+        success.removeAttribute("hidden");
+        success.scrollIntoView({ behavior: "smooth", block: "center" });
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.removeAttribute("disabled");
+          submitBtn.textContent = "Send message";
+        }
+        error.textContent =
+          "Sorry — something went wrong sending that. Please try again or email us at info@lyrava.com.";
+        error.removeAttribute("hidden");
+        // refresh captcha so the user can retry without an obviously stale challenge
+        newChallenge();
+      }
+    });
+  })();
+</script>

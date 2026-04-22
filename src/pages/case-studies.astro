@@ -1,0 +1,114 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
+import SparkBackdrop from "@components/SparkBackdrop.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import CTACard from "@components/CTACard.astro";
+
+const seo = {
+  title: "Case Studies — Automation Engagements That Paid Back",
+  description:
+    "Selected automation engagements: process automations, AI agents, and revenue-ops builds for UK and US teams. Anonymised where the client prefers, full reference detail on request.",
+  path: "/case-studies",
+};
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Case studies", href: "/case-studies" },
+];
+
+// Placeholder case studies — clearly marked. Replace with real engagements
+// (with the client's permission) before launch.
+const studies = [
+  {
+    sector: "UK fintech · 90 employees",
+    title: "Customer-support agent that resolves 67% of tickets",
+    metric: "67%",
+    metricLabel: "Tier-1 deflection",
+    summary:
+      "A Claude-powered support agent grounded in the help centre and policy docs, with hard escalation rules around money movement. Two months in: 67% deflection at 4.6/5 satisfaction. Sample case study — full reference engagement available on request.",
+    tag: "AI agents",
+  },
+  {
+    sector: "US marketing agency · 40 employees",
+    title: "Onboarding cycle time: 3 days → same day",
+    metric: "3d → same-day",
+    metricLabel: "Onboarding time",
+    summary:
+      "A single intake form in HubSpot now triggers a Zapier sequence that fires the contract, provisions Slack, creates the Drive folder, schedules the kickoff, and posts the welcome message — all before the new client refreshes their email.",
+    tag: "Process automation",
+  },
+  {
+    sector: "UK ecommerce · homewares",
+    title: "Daily price monitoring across 5,200 SKUs",
+    metric: "5,200",
+    metricLabel: "SKUs tracked daily",
+    summary:
+      "A Playwright pipeline scrapes 12 competitor sites at off-peak hours and surfaces a Looker dashboard of price gaps, undercutting alerts, and stock-out opportunities. The pricing analyst now spends 30 min/day acting on the data.",
+    tag: "Data pipelines",
+  },
+];
+---
+
+<BaseLayout {...seo}>
+  <section class="relative isolate overflow-hidden">
+    <SparkBackdrop subtle={true} />
+    <div class="container-wide pt-12 pb-16 md:pt-16 md:pb-20">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="mx-auto mt-10 max-w-3xl text-center">
+        <span class="eyebrow reveal">
+          <span class="h-1.5 w-1.5 rounded-full bg-glow-400 shadow-[0_0_8px_rgba(255,217,138,0.6)]"></span>
+          Selected work
+        </span>
+        <h1 class="reveal mt-6 text-display-xl text-balance text-cloud">
+          What
+          <span class="gradient-text italic">"hours saved"</span>
+          looks like in production.
+        </h1>
+        <p class="reveal mt-6 text-pretty text-lg text-cloud/75 md:text-xl">
+          A handful of representative engagements, anonymised where the client prefers
+          discretion. Full reference detail (and intros to the people who ran the project
+          on the client side) available when you're seriously evaluating us.
+        </p>
+        <p class="reveal mt-4 text-xs uppercase tracking-[0.18em] text-cloud/45">
+          Showcase pieces — replace with real, named studies as relationships allow
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Section padding="md">
+    <ul class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {studies.map((s, i) => (
+        <li class="reveal" style={`transition-delay:${i * 70}ms`}>
+          <article class="card flex h-full flex-col">
+            <span class="text-xs uppercase tracking-[0.18em] text-starlight-200/80">{s.tag}</span>
+            <div class="mt-6 font-display text-4xl text-cloud">
+              <span class="gradient-text-glow">{s.metric}</span>
+            </div>
+            <div class="mt-1 text-xs uppercase tracking-[0.16em] text-cloud/55">{s.metricLabel}</div>
+            <h2 class="mt-6 text-xl text-cloud text-balance">{s.title}</h2>
+            <p class="mt-3 text-sm text-cloud/70 text-pretty">{s.summary}</p>
+            <div class="mt-auto pt-6 text-xs text-cloud/45">{s.sector}</div>
+          </article>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section padding="md">
+    <div class="mx-auto max-w-2xl rounded-2xl border border-white/[0.07] bg-white/[0.02] p-8 text-center">
+      <h2 class="text-2xl text-cloud">Want a real reference?</h2>
+      <p class="mt-3 text-pretty text-cloud/70">
+        Most of our work happens under NDA. When you're at the point of seriously evaluating us,
+        we'll connect you with two or three clients who'll talk through what we built, how it
+        went, and what they'd change — directly, without us in the room.
+      </p>
+      <a href="/contact" class="btn-primary mt-6">Ask for references</a>
+    </div>
+  </Section>
+
+  <Section padding="xl">
+    <CTACard />
+  </Section>
+</BaseLayout>

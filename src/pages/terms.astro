@@ -1,0 +1,118 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import LegalLayout from "@components/LegalLayout.astro";
+import { SITE } from "@lib/site";
+
+const seo = {
+  title: "Terms of Service",
+  description:
+    "Terms of service for the Lyrava website. Engagement-specific terms are governed by the contract you sign for any service.",
+  path: "/terms",
+};
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Terms", href: "/terms" },
+];
+---
+
+<BaseLayout {...seo}>
+  <LegalLayout title="Terms of service" updated="22 April 2026" breadcrumbs={breadcrumbs}>
+    <p>
+      These terms govern your use of the {SITE.name} website at
+      <a href={SITE.url}>{SITE.url}</a> (the "Site"). By accessing or using the Site,
+      you agree to these terms. If you don't agree, please don't use the Site.
+    </p>
+
+    <p>
+      <strong>Engagement terms are separate.</strong> When we work together on an
+      automation, AI, or consulting project, the rights and obligations are governed by
+      a separate written contract (a Statement of Work or Master Services Agreement) —
+      not by these website terms.
+    </p>
+
+    <h2>1. Use of the Site</h2>
+    <p>You agree to use the Site only for lawful purposes. You won't:</p>
+    <ul>
+      <li>Use the Site in a way that breaches any applicable law or regulation.</li>
+      <li>
+        Attempt to gain unauthorised access to the Site, the servers it runs on, or any
+        connected systems.
+      </li>
+      <li>
+        Introduce viruses, trojans, worms, or any other technically harmful material.
+      </li>
+      <li>
+        Use the Site to harass or harm others, send unsolicited communications, or
+        attempt to defraud anyone.
+      </li>
+      <li>
+        Scrape or systematically extract content from the Site for resale or any
+        commercial purpose without our written consent.
+      </li>
+    </ul>
+
+    <h2>2. Intellectual property</h2>
+    <p>
+      All content on the Site (text, design, code, logo, marks, images) is owned by
+      {SITE.name} or licensed to us, and is protected by UK, EU, US, and international
+      copyright and trade-mark laws. You may view, share, and link to the Site for
+      personal, non-commercial use. Any other use — reproduction, redistribution,
+      adaptation — requires our written permission.
+    </p>
+
+    <h2>3. Information accuracy</h2>
+    <p>
+      We work hard to keep the content on the Site accurate and up to date, but we make
+      no warranties about its completeness, reliability, or suitability for any
+      particular purpose. Statements about pricing, timelines, or outcomes on the Site
+      are general guidance — your specific engagement terms are confirmed in writing
+      before any work begins.
+    </p>
+
+    <h2>4. Third-party links and tools</h2>
+    <p>
+      The Site may link to third-party tools, services, or websites (e.g. scheduling
+      links, analytics providers, social platforms). We have no control over those third
+      parties and we accept no responsibility for their content, terms, or privacy
+      practices.
+    </p>
+
+    <h2>5. Limitation of liability</h2>
+    <p>
+      To the fullest extent permitted by law, {SITE.name} excludes all liability for any
+      indirect, incidental, special, consequential, or punitive damages arising out of
+      or in connection with your use of the Site, including loss of profits, revenue,
+      data, or goodwill.
+    </p>
+    <p>
+      Nothing in these terms excludes or limits any liability that cannot lawfully be
+      excluded — including liability for death or personal injury caused by negligence,
+      fraud, or fraudulent misrepresentation.
+    </p>
+
+    <h2>6. Changes to these terms</h2>
+    <p>
+      We may update these terms from time to time. The "last updated" date above will
+      reflect the most recent revision. Material changes will be flagged on the Site
+      where appropriate.
+    </p>
+
+    <h2>7. Governing law</h2>
+    <p>
+      These terms are governed by the laws of England and Wales. Any disputes will be
+      resolved in the courts of England and Wales — without prejudice to your rights as
+      a consumer (where applicable) under the laws of your home jurisdiction.
+    </p>
+    <p>
+      For US-based clients with whom we sign a Statement of Work governed by US law, the
+      contract terms (and their governing law and venue) will take precedence over this
+      section in respect of the engagement itself.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+      Questions about these terms? Email
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+  </LegalLayout>
+</BaseLayout>

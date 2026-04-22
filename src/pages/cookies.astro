@@ -1,0 +1,100 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import LegalLayout from "@components/LegalLayout.astro";
+import { SITE } from "@lib/site";
+
+const seo = {
+  title: "Cookie Policy",
+  description:
+    "Which cookies and similar technologies the Lyrava website uses, why, and how you can control them.",
+  path: "/cookies",
+};
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Cookies", href: "/cookies" },
+];
+---
+
+<BaseLayout {...seo}>
+  <LegalLayout title="Cookie policy" updated="22 April 2026" breadcrumbs={breadcrumbs}>
+    <p>
+      This page explains the cookies and similar technologies (collectively, "cookies")
+      we use on <a href={SITE.url}>{SITE.url}</a>, why we use them, and how you can
+      control them.
+    </p>
+
+    <h2>1. What cookies are</h2>
+    <p>
+      Cookies are small text files placed on your device when you visit a website. They
+      help the site work, remember your preferences, and (in some cases) measure how the
+      site is used. Some cookies are set by us ("first-party"), and some are set by
+      third-party services we use ("third-party").
+    </p>
+
+    <h2>2. Cookies we use</h2>
+
+    <h3>Strictly necessary (always on)</h3>
+    <ul>
+      <li>
+        <strong><code>lyrava-cookie-consent</code></strong> (first-party) — remembers
+        your choice in the cookie banner so we don't ask again every visit. Stored in
+        <code>localStorage</code>; expires when you clear your browser data.
+      </li>
+    </ul>
+
+    <h3>Analytics (only with your consent)</h3>
+    <p>
+      The following cookies fire only after you click "Accept" in the cookie banner.
+      They help us understand which pages people find useful and where the Site can
+      improve. None of these are used for advertising.
+    </p>
+    <ul>
+      <li>
+        <strong>Google Analytics 4</strong> (third-party, when enabled) — sets cookies
+        like <code>_ga</code>, <code>_ga_*</code>. We anonymise IP addresses and don't
+        share data with Google for advertising. Retention is set to 14 months.
+      </li>
+      <li>
+        <strong>Microsoft Clarity</strong> (third-party, when enabled) — anonymous
+        session recordings and heatmaps to help us understand site usability. Cookies
+        such as <code>_clck</code>, <code>_clsk</code>, <code>MUID</code>.
+      </li>
+    </ul>
+
+    <h3>What we don't use</h3>
+    <ul>
+      <li>Advertising cookies, retargeting pixels, or social tracking.</li>
+      <li>Cross-site behavioural-advertising trackers.</li>
+      <li>Third-party data brokers or "data enrichment" cookies.</li>
+    </ul>
+
+    <h2>3. How to control cookies</h2>
+    <p>
+      You can change your mind at any time:
+    </p>
+    <ul>
+      <li>
+        Clear your browser's storage for this site to reset the consent banner — it
+        will reappear on your next visit so you can re-choose.
+      </li>
+      <li>
+        Most browsers let you block cookies entirely. Check your browser settings or
+        visit <a href="https://www.aboutcookies.org/">aboutcookies.org</a> for guidance.
+        Note that blocking strictly necessary cookies may stop parts of the Site working.
+      </li>
+    </ul>
+
+    <h2>4. Changes to this policy</h2>
+    <p>
+      We may update this policy as our cookie usage changes. The "last updated" date at
+      the top of the page will reflect the most recent revision.
+    </p>
+
+    <h2>5. Contact</h2>
+    <p>
+      Questions about cookies or how we handle data? Email
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, or read our
+      <a href="/privacy-policy">privacy policy</a>.
+    </p>
+  </LegalLayout>
+</BaseLayout>

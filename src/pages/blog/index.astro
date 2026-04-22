@@ -1,0 +1,95 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
+import SparkBackdrop from "@components/SparkBackdrop.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import CTACard from "@components/CTACard.astro";
+
+const seo = {
+  title: "Blog — Notes on Automation, AI Agents, and Revenue Ops",
+  description:
+    "Practical notes on business process automation, AI agents, and revenue operations — from the Lyrava team. No thought-leadership filler; just things we've learned shipping work.",
+  path: "/blog",
+};
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+];
+
+// Posts get added in Step 4 — Astro content collections, Markdown-based.
+const upcoming = [
+  {
+    title: "How Business Process Automation Cuts Operational Costs by 30%: A 2026 Guide for UK & US SMEs",
+    summary:
+      "Where the 30% number actually comes from, why most automation projects miss it, and the playbook we use to hit it inside a quarter.",
+  },
+  {
+    title: "Zapier vs Make vs n8n: Which Automation Platform Is Right for Your Business?",
+    summary:
+      "An opinionated comparison from someone who ships on all three. Pricing breakdowns, sweet spots, anti-patterns, and the questions to ask before you commit.",
+  },
+  {
+    title: "Building Your First AI Agent: A Non-Technical Founder's Roadmap",
+    summary:
+      "What an agent actually is, how to scope a useful one, what to watch out for, and how to know when to call in help. Written for the founder, not the engineer.",
+  },
+];
+---
+
+<BaseLayout {...seo}>
+  <section class="relative isolate overflow-hidden">
+    <SparkBackdrop subtle={true} />
+    <div class="container-wide pt-12 pb-16 md:pt-16 md:pb-20">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="mx-auto mt-10 max-w-3xl text-center">
+        <span class="eyebrow reveal">
+          <span class="h-1.5 w-1.5 rounded-full bg-glow-400 shadow-[0_0_8px_rgba(255,217,138,0.6)]"></span>
+          Lyrava blog
+        </span>
+        <h1 class="reveal mt-6 text-display-xl text-balance text-cloud">
+          Notes on automation,
+          <span class="gradient-text italic">honestly written.</span>
+        </h1>
+        <p class="reveal mt-6 text-pretty text-lg text-cloud/75 md:text-xl">
+          Practical pieces from people doing the work. No thought-leadership filler, no
+          AI-slop posts written to game search rankings — just things we've learned
+          shipping automations and agents into real businesses.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Section padding="md">
+    <div class="mx-auto max-w-3xl rounded-3xl border border-starlight-200/15 bg-white/[0.03] p-8 text-center">
+      <h2 class="text-2xl text-cloud">Articles arriving shortly</h2>
+      <p class="mt-3 text-pretty text-cloud/70">
+        We'd rather publish three good pieces than thirty thin ones. Three are in the
+        works — listed below — and the first will land in the next few weeks. Subscribe
+        to the email list (lightweight, monthly, no nurture sequence) to be the first to
+        read them.
+      </p>
+      <a href="/contact" class="btn-secondary mt-6">Get notified by email</a>
+    </div>
+
+    <ul class="mt-12 grid gap-5 md:grid-cols-3">
+      {upcoming.map((p, i) => (
+        <li
+          class="reveal rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6"
+          style={`transition-delay:${i * 70}ms`}
+        >
+          <span class="text-xs uppercase tracking-[0.18em] text-starlight-200/80">In the works</span>
+          <h3 class="mt-4 text-lg text-cloud text-balance">{p.title}</h3>
+          <p class="mt-3 text-sm text-cloud/70 text-pretty">{p.summary}</p>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section padding="xl">
+    <CTACard
+      title="Got a question we should write about?"
+      body="Email us a question you wish someone in this space had answered honestly — if it's good, we'll write it up and credit you (or not, if you'd rather)."
+    />
+  </Section>
+</BaseLayout>

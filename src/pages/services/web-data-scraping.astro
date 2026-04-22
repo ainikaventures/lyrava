@@ -1,0 +1,209 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
+import ServiceHero from "@components/ServiceHero.astro";
+import Steps from "@components/Steps.astro";
+import ToolGrid from "@components/ToolGrid.astro";
+import UseCaseList from "@components/UseCaseList.astro";
+import FAQ from "@components/FAQ.astro";
+import CTACard from "@components/CTACard.astro";
+import { serviceSchema } from "@lib/seo";
+
+const slug = "web-data-scraping";
+const title = "Web & Data Scraping";
+const description =
+  "Compliant web scraping and data pipelines for competitive price monitoring, lead list building, and market research — built to respect robots.txt, ToS, and rate limits. Audit-trailed, monitored, and defensible.";
+
+const seo = {
+  title: `Web Scraping & Data Pipeline Consultancy — Lyrava`,
+  description:
+    "Compliant web scraping and data pipelines for UK and US teams. Price monitoring, lead enrichment, market research — robots.txt-respecting, rate-limited, fully audit-trailed.",
+  path: `/services/${slug}`,
+  keywords: [
+    "web scraping consultancy",
+    "data pipeline development",
+    "competitive price monitoring",
+    "lead list building",
+    "Playwright scraping",
+    "compliant web scraping",
+  ],
+  jsonLd: [serviceSchema({ name: title, description, slug })],
+};
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "Web & Data Scraping", href: `/services/${slug}` },
+];
+
+const steps = [
+  {
+    title: "Compliance first, scraping second",
+    body: "Before we build anything, we check the target sites' robots.txt, terms of service, and (where relevant) the legal regime in your jurisdiction. We won't take engagements that require ignoring all three. Most legitimate use cases are fine; we'll tell you upfront if yours isn't.",
+  },
+  {
+    title: "Design for the long run, not the demo",
+    body: "Most scrapers ship working and break in two weeks. We design with target sites' brittleness in mind — semantic selectors over absolute XPaths, structural change detection that alerts before silent failures, retry logic that respects rate limits. Boring engineering that earns its keep.",
+  },
+  {
+    title: "Pipe data into something useful",
+    body: "Raw scraped data is rarely the deliverable. We pipe outputs into Postgres, BigQuery, Airtable, your CRM, or a dashboard — with deduplication, normalisation, and the schema your team actually wants to query. Not a CSV in a Google Drive folder no one opens.",
+  },
+  {
+    title: "Monitor like production infrastructure",
+    body: "Run-time alerting (Sentry, Slack, email). Data-quality alerting when the new batch looks too different from yesterday's. Cost monitoring on proxies and compute. A dashboard that tells you how much fresh data you have and when it last updated.",
+  },
+];
+
+const tools = [
+  { name: "Playwright", tag: "headless browser" },
+  { name: "Puppeteer", tag: "headless browser" },
+  { name: "Scrapy", tag: "Python framework" },
+  { name: "BeautifulSoup", tag: "HTML parsing" },
+  { name: "Apify", tag: "managed actors" },
+  { name: "Bright Data", tag: "proxy network" },
+  { name: "ScrapingBee / ScraperAPI", tag: "managed proxies" },
+  { name: "Pandas", tag: "data wrangling" },
+  { name: "Postgres / BigQuery", tag: "warehouse" },
+  { name: "Airbyte", tag: "ingestion" },
+  { name: "n8n / Prefect", tag: "orchestration" },
+  { name: "Sentry / Better Stack", tag: "monitoring" },
+];
+
+const cases = [
+  {
+    metric: "5,200 SKUs",
+    metricLabel: "Tracked daily",
+    title: "Competitive price monitoring for a UK ecommerce brand",
+    context:
+      "A homewares retailer with 5,200 SKUs needed to monitor 12 competitor sites for price and stock changes — they'd been doing it in a manual spreadsheet, updated weekly, by an analyst.",
+    outcome:
+      "A daily Playwright pipeline now scrapes all 12 sites at off-peak hours (with rate limiting), writes to Postgres, and surfaces a Looker dashboard showing price gaps, undercutting alerts, and stock-out opportunities. Their pricing analyst now spends 30 minutes a day acting on the data instead of two days a week collecting it.",
+  },
+  {
+    metric: "12,400",
+    metricLabel: "Enriched UK SME leads",
+    title: "Lead list build for a US fintech",
+    context:
+      "A US-based fintech expanding into the UK needed a list of UK SMEs in three target verticals with founder contacts, recent funding signals, and tech stack indicators — the kind of list no off-the-shelf data provider had complete.",
+    outcome:
+      "A multi-source pipeline combining Companies House, LinkedIn (via compliant providers), Crunchbase, and BuiltWith. Output: 12,400 verified records delivered into HubSpot with email verification (Apollo/NeverBounce), tier-scored by ICP fit. The pipeline reruns monthly to keep the list fresh; the sales team now starts each month with a curated outbound queue.",
+  },
+  {
+    metric: "Daily",
+    metricLabel: "Refreshed market signal",
+    title: "Job-posting market research for a US consultancy",
+    context:
+      "A staffing consultancy needed to track which Fortune 500 companies were hiring in specific roles, in real time, to know which accounts to prospect.",
+    outcome:
+      "A daily pipeline that scrapes 40 enterprise career sites and major job boards, dedupes against the previous day, classifies postings against the consultancy's service categories, and pushes new hits into Slack as a digest. Account execs now hear about a hiring signal within 24 hours instead of finding out from a competitor's press release.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Is web scraping legal?",
+    answer:
+      "In most cases involving public data and reasonable conduct, yes — but the answer depends on jurisdiction, the target site's terms of service, the type of data, and how it's used. Public business information is generally fair game in the US (per <em>hiQ v. LinkedIn</em> and the CFAA's narrowing) and in the UK/EU (within GDPR's bounds for personal data). Personal data, paywalled content, copyrighted media, and anything that requires bypassing technical access controls are different stories. We'll give you a clear read on your specific case before we quote.",
+  },
+  {
+    question: "Will the target sites block us?",
+    answer:
+      "Some will try, and that's fine — we operate well within reasonable conduct. We respect robots.txt by default, throttle requests to a level that doesn't burden the target server, identify our user-agent honestly when we can, and rotate IPs through legitimate proxy networks. We don't bypass paywalls, defeat CAPTCHAs, or impersonate browsers in ways that cross ethical lines. The goal is durable data collection, not a cat-and-mouse game.",
+  },
+  {
+    question: "How do you handle robots.txt and terms of service?",
+    answer:
+      "We read both before we build. If robots.txt disallows a path, we don't scrape that path. If terms of service explicitly prohibit automated access for the use case in question, we tell you and look for alternatives — often the data is available through an official API, a partner data provider, or a public dataset. We won't quietly ignore either to land an engagement.",
+  },
+  {
+    question: "What output formats do you support?",
+    answer:
+      "Whatever your team actually queries: Postgres, BigQuery, Snowflake, Airtable, Google Sheets (for small/visual cases), or direct push into your CRM (HubSpot, Pipedrive, Salesforce). We default to a real database for anything more than a few hundred rows or a few weeks of history.",
+  },
+  {
+    question: "What happens when the target site changes?",
+    answer:
+      "Every pipeline ships with structural-change detection: if the page layout or DOM changes meaningfully, we get an alert before the data goes stale. On a retainer we fix it inside SLA; off-retainer we send you a quote within 24 hours. Either way, you don't find out three weeks later that your dashboard's been showing stale numbers.",
+  },
+  {
+    question: "What about ongoing maintenance?",
+    answer:
+      "Most pipelines need 1–4 hours of attention a month — site changes, proxy issues, schema tweaks, occasional anti-bot escalations. We offer flat-rate monthly maintenance, or you can take it in-house with the documentation we provide. If your team has the engineering skills, we'll happily train them and step out.",
+  },
+];
+---
+
+<BaseLayout {...seo}>
+  <ServiceHero
+    eyebrow="Web & data scraping"
+    title="Compliant data pipelines"
+    accent="for the questions your team can't answer."
+    lede="Pricing intelligence. Lead enrichment. Market research. Competitor signal. We build the scraping and data pipelines — robots.txt-respecting, rate-limited, monitored — that turn the public web into something your business can actually act on."
+    breadcrumbs={breadcrumbs}
+  />
+
+  <Section padding="md">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <span class="eyebrow">The problem</span>
+        <h2 class="mt-4 text-display-lg text-balance">
+          The data exists. Collecting it is
+          <span class="italic text-starlight-200">someone's full-time job.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-7 space-y-5 text-cloud/75 text-pretty">
+        <p>
+          Most teams already know what data would change how they operate.
+          Competitor pricing across 5,000 SKUs. A list of every UK SME in three
+          verticals that's hired in the last 60 days. Job postings across the
+          Fortune 500 in real time. The signal is there — it's just on twelve
+          different websites and refreshes hourly.
+        </p>
+        <p>
+          The two failure modes we see most often: an analyst quietly burning two
+          days a week on a spreadsheet that's stale by Wednesday, or a consumer-grade
+          scraping tool that worked for a month and then quietly broke without
+          anyone noticing for three weeks. Both have the same end state — decisions
+          made on stale data, dressed up as "we're data-driven."
+        </p>
+        <p>
+          The fix isn't more scraping. It's the same engineering rigour you'd
+          apply to a production service: monitored, alerted, documented, and built
+          to survive the inevitable changes on the other end.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section padding="md">
+    <Steps
+      steps={steps}
+      title="How we build pipelines that don't quietly break"
+      blurb="Compliance check, durable engineering, useful destination, production-grade monitoring. Usually 3–6 weeks to first production data depending on target complexity."
+    />
+  </Section>
+
+  <Section padding="md">
+    <ToolGrid
+      tools={tools}
+      title="Stack"
+      blurb="The right stack depends on target site behaviour, output volume, and your team's appetite to run infrastructure. We'll pick what fits — and own the parts you don't want to."
+    />
+  </Section>
+
+  <Section padding="md">
+    <UseCaseList cases={cases} />
+  </Section>
+
+  <Section padding="md">
+    <FAQ faqs={faqs} />
+  </Section>
+
+  <Section padding="xl">
+    <CTACard
+      title="Got a list of URLs and a question your data should answer?"
+      body="Send us the question. We'll come back inside 48 hours with: whether it's possible (compliantly), what it would cost, and whether there's a better way to get the same answer without scraping at all."
+    />
+  </Section>
+</BaseLayout>

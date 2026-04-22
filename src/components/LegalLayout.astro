@@ -1,0 +1,58 @@
+---
+import Section from "./Section.astro";
+import SparkBackdrop from "./SparkBackdrop.astro";
+import Breadcrumbs from "./Breadcrumbs.astro";
+
+interface Props {
+  title: string;
+  updated: string; // human-readable date
+  breadcrumbs: { name: string; href: string }[];
+}
+const { title, updated, breadcrumbs } = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden">
+  <SparkBackdrop subtle={true} />
+  <div class="container-x pt-12 pb-10 md:pt-16">
+    <Breadcrumbs items={breadcrumbs} />
+    <div class="mt-10 max-w-prose">
+      <h1 class="text-display-lg text-balance">{title}</h1>
+      <p class="mt-3 text-sm text-cloud/55">Last updated: {updated}</p>
+    </div>
+  </div>
+</section>
+
+<Section padding="md">
+  <div class="mx-auto max-w-prose">
+    <div class="rounded-xl border border-glow-400/20 bg-glow-400/[0.05] p-5 text-sm text-cloud/80">
+      <strong class="text-glow-300">Heads up:</strong> this is starter copy intended as a
+      reasonable baseline. Review it with a qualified solicitor or attorney for your
+      jurisdiction (UK, US state, EU member state) before publishing as final policy.
+    </div>
+
+    <article class="prose-legal mt-10 space-y-5 text-cloud/80">
+      <slot />
+    </article>
+  </div>
+</Section>
+
+<style is:global>
+  .prose-legal h2 {
+    @apply mt-12 text-2xl text-cloud;
+  }
+  .prose-legal h3 {
+    @apply mt-8 text-lg text-cloud;
+  }
+  .prose-legal p {
+    @apply text-pretty leading-relaxed;
+  }
+  .prose-legal ul {
+    @apply list-disc space-y-2 pl-6;
+  }
+  .prose-legal a {
+    @apply text-starlight-200 underline-offset-4 hover:underline;
+  }
+  .prose-legal strong {
+    @apply text-cloud;
+  }
+</style>

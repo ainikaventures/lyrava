@@ -1,0 +1,35 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SparkBackdrop from "@components/SparkBackdrop.astro";
+
+const seo = {
+  title: "Page Not Found — 404",
+  description: "The page you were looking for could not be found.",
+  path: "/404",
+  noindex: true,
+};
+---
+
+<BaseLayout {...seo}>
+  <section class="relative isolate overflow-hidden">
+    <SparkBackdrop />
+    <div class="container-x flex min-h-[70vh] flex-col items-center justify-center py-24 text-center">
+      <p class="font-display text-[120px] leading-none md:text-[200px]">
+        <span class="gradient-text">404</span>
+      </p>
+      <h1 class="mt-2 text-display-lg text-balance text-cloud">
+        That page drifted off the map.
+      </h1>
+      <p class="mx-auto mt-5 max-w-prose text-pretty text-cloud/70">
+        Either the URL is off, or we moved the page somewhere more sensible. A few paths
+        that definitely still work:
+      </p>
+
+      <ul class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <li><a href="/" class="btn-primary">Back to home</a></li>
+        <li><a href="/services" class="btn-secondary">See our services</a></li>
+        <li><a href="/contact" class="btn-ghost">Get in touch</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

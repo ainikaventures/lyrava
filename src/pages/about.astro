@@ -1,0 +1,189 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
+import SparkBackdrop from "@components/SparkBackdrop.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import CTACard from "@components/CTACard.astro";
+
+const seo = {
+  title: "About Lyrava — A Focused Automation Agency",
+  description:
+    "Lyrava is a small, senior automation agency for UK and US teams. We build the workflows, AI agents, and revenue-ops plumbing that compound — and we measure ourselves on hours returned, not slides delivered.",
+  path: "/about",
+  keywords: [
+    "automation agency UK",
+    "automation agency USA",
+    "AI consultancy",
+    "workflow automation team",
+  ],
+};
+
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+];
+
+const beliefs = [
+  {
+    title: "Audit before automating",
+    body: "Half the wins come from killing steps, not connecting them. Every engagement starts with mapping the process — usually we can show you what to delete before we wire anything up.",
+  },
+  {
+    title: "Boring tech where it counts",
+    body: "Zapier and Make for speed. n8n and code for scale. AI only where it earns its keep — not because the founder read a thread on it. We have no reseller commission with any vendor we recommend.",
+  },
+  {
+    title: "Owned by you, not us",
+    body: "Every build comes with credentials in your name, runbooks in your wiki, and a Loom walking your team through how to fix things when they break. You can fire us tomorrow and nothing stops working.",
+  },
+  {
+    title: "Hours saved is the only metric that counts",
+    body: "We agree the number upfront — usually a target of senior hours returned per week — and report against it monthly. If a workflow isn't paying back, we rebuild it or retire it. We won't keep billing for a build that isn't earning.",
+  },
+  {
+    title: "Senior-only, no handoffs",
+    body: "You work with the people doing the building. No account managers translating between you and a junior team. No offshore subcontracting. The trade-off: we take fewer engagements at once, and we say no to briefs that aren't a fit.",
+  },
+  {
+    title: "We say no when no is the answer",
+    body: "Some processes shouldn't be automated yet — they're broken upstream, or the inputs are too messy, or a different tool would solve it for £20/month. We'll tell you. The shortest engagement we ever ran was a 90-minute call where we recommended the client buy a £40 SaaS instead of hiring us.",
+  },
+];
+---
+
+<BaseLayout {...seo}>
+  <section class="relative isolate overflow-hidden">
+    <SparkBackdrop subtle={true} />
+    <div class="container-wide pt-12 pb-20 md:pt-16 md:pb-28">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="mx-auto mt-10 max-w-3xl text-center">
+        <span class="eyebrow reveal">
+          <span class="h-1.5 w-1.5 rounded-full bg-glow-400 shadow-[0_0_8px_rgba(255,217,138,0.6)]"></span>
+          About Lyrava
+        </span>
+        <h1 class="reveal mt-6 text-display-xl text-balance text-cloud">
+          A small, senior automation agency.
+          <span class="gradient-text italic">No filler.</span>
+        </h1>
+        <p class="reveal mt-6 text-pretty text-lg text-cloud/75 md:text-xl">
+          Lyrava exists because most "AI consultancies" sell decks and most automation
+          agencies sell volume. We sell the thing in between: the careful, opinionated
+          engineering that turns a recurring manual process into something that quietly
+          runs itself — and stays running.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Section padding="md">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <span class="eyebrow">Who we are</span>
+        <h2 class="mt-4 text-display-lg text-balance">
+          A distributed team across the
+          <span class="italic text-starlight-200">UK and US.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-7 space-y-5 text-cloud/75 text-pretty">
+        <p>
+          We're builders first — engineers, automation specialists, and revenue-ops
+          practitioners with a couple of decades of combined experience inside scaling
+          businesses, agencies, and SaaS companies. Distributed across UK and US time
+          zones so meetings happen in your working hours, not ours.
+        </p>
+        <p>
+          Lyrava is intentionally small. Every project has a senior lead from end to
+          end — no "our team will get back to you on that," no offshore handoffs, no
+          junior account managers translating between you and the people building. The
+          trade-off is honest: we take fewer engagements at once, and we'll say no to a
+          brief that isn't a fit.
+        </p>
+        <p>
+          The work has shipped quietly inside fintechs, agencies, e-commerce brands,
+          and consultancies you've heard of. We don't publish logos most clients want
+          kept private — we'll talk through reference engagements directly when
+          you're evaluating us.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section padding="md">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="eyebrow">What we believe</span>
+      <h2 class="mt-4 text-display-lg text-balance">
+        Six things that
+        <span class="italic text-starlight-200">shape every project.</span>
+      </h2>
+    </div>
+
+    <ul class="mt-12 grid gap-5 md:grid-cols-2">
+      {beliefs.map((b, i) => (
+        <li
+          class="reveal rounded-2xl border border-white/[0.07] bg-white/[0.02] p-7"
+          style={`transition-delay:${i * 60}ms`}
+        >
+          <div class="flex h-9 w-9 items-center justify-center rounded-md border border-starlight-200/15 bg-starlight-200/[0.06] font-display text-starlight-200">
+            {i + 1}
+          </div>
+          <h3 class="mt-5 text-lg text-cloud">{b.title}</h3>
+          <p class="mt-2 text-sm text-pretty text-cloud/70">{b.body}</p>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section padding="md">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <span class="eyebrow">How we engage</span>
+        <h2 class="mt-4 text-display-lg text-balance">
+          Three ways to work with us.
+        </h2>
+      </div>
+      <div class="lg:col-span-7">
+        <ul class="space-y-5">
+          <li class="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg text-cloud">Two-day audit</h3>
+              <span class="text-xs uppercase tracking-[0.18em] text-starlight-200/80">£1,500 / $2,000</span>
+            </div>
+            <p class="mt-3 text-sm text-cloud/70 text-pretty">
+              The smallest engagement we'll take. We map a process end-to-end, return
+              a prioritised opportunity list, and quote a fixed price for the build.
+              The audit fee rolls into the project if you proceed.
+            </p>
+          </li>
+
+          <li class="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg text-cloud">Fixed-price build</h3>
+              <span class="text-xs uppercase tracking-[0.18em] text-starlight-200/80">From £6k / $8k</span>
+            </div>
+            <p class="mt-3 text-sm text-cloud/70 text-pretty">
+              A scoped project with a fixed deliverable, a fixed timeline, and a fixed
+              fee. Most workflow and agent builds finish in 2–4 weeks. You see live
+              runs before we ever invoice for build time.
+            </p>
+          </li>
+
+          <li class="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg text-cloud">Fractional retainer</h3>
+              <span class="text-xs uppercase tracking-[0.18em] text-starlight-200/80">£3k–£8k / month</span>
+            </div>
+            <p class="mt-3 text-sm text-cloud/70 text-pretty">
+              An ongoing engagement where we own the automation roadmap: monitor what
+              we've built, ship the next wave, and act as the ops/AI team you don't
+              need to hire full-time. Pause or cancel any month — you keep everything.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section padding="xl">
+    <CTACard />
+  </Section>
+</BaseLayout>

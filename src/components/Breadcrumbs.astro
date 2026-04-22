@@ -1,0 +1,36 @@
+---
+import { breadcrumbSchema } from "@lib/seo";
+
+interface Crumb {
+  name: string;
+  href: string;
+}
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+const schema = breadcrumbSchema(items.map((c) => ({ name: c.name, url: c.href })));
+---
+
+<nav aria-label="Breadcrumb" class="text-xs text-cloud/55">
+  <ol class="flex flex-wrap items-center gap-1.5">
+    {items.map((c, i) => {
+      const isLast = i === items.length - 1;
+      return (
+        <li class="flex items-center gap-1.5">
+          {isLast ? (
+            <span aria-current="page" class="text-cloud/70">{c.name}</span>
+          ) : (
+            <>
+              <a href={c.href} class="hover:text-starlight-200 underline-offset-4 hover:underline">{c.name}</a>
+              <span aria-hidden="true" class="text-cloud/30">/</span>
+            </>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,27 @@
+---
+interface Props {
+  id?: string;
+  as?: "section" | "div" | "article";
+  class?: string;
+  /** "wide" uses max-w-wide, default uses max-w-container */
+  width?: "default" | "wide";
+  /** Vertical padding preset */
+  padding?: "sm" | "md" | "lg" | "xl";
+}
+
+const { id, as: Tag = "section", class: className = "", width = "default", padding = "lg" } = Astro.props;
+
+const widthClass = width === "wide" ? "container-wide" : "container-x";
+const padClass = {
+  sm: "py-12 md:py-16",
+  md: "py-16 md:py-20",
+  lg: "py-20 md:py-28",
+  xl: "py-28 md:py-36",
+}[padding];
+---
+
+<Tag id={id} class:list={["relative", padClass, className]}>
+  <div class={widthClass}>
+    <slot />
+  </div>
+</Tag>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block obvious form-handler endpoints from being indexed
+Disallow: /contact.php
+
+Sitemap: https://lyrava.com/sitemap-index.xml

@@ -1,0 +1,172 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import LegalLayout from "@components/LegalLayout.astro";
+import { SITE } from "@lib/site";
+
+const seo = {
+  title: "Privacy Policy",
+  description:
+    "How Lyrava collects, uses, stores, and shares personal data. Compliant with UK GDPR, EU GDPR, and US state privacy laws (CCPA / CPRA).",
+  path: "/privacy-policy",
+  noindex: false,
+};
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Privacy policy", href: "/privacy-policy" },
+];
+---
+
+<BaseLayout {...seo}>
+  <LegalLayout title="Privacy policy" updated="22 April 2026" breadcrumbs={breadcrumbs}>
+    <p>
+      This policy explains how {SITE.name} ("we", "us", "our") collects, uses, stores,
+      and shares personal data when you visit <a href={SITE.url}>{SITE.url}</a> (the
+      "Site") or contact us via the form, email, or a scheduling link. We're committed
+      to handling your information transparently and only for the purposes set out below.
+    </p>
+
+    <h2>1. Who we are</h2>
+    <p>
+      {SITE.name} is a trading name. Our registered company name and number, and our
+      registered office address, will be added here once finalised. For any privacy
+      questions, contact us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+
+    <h2>2. The data we collect</h2>
+    <p>We collect the following categories of personal data:</p>
+    <ul>
+      <li>
+        <strong>Information you give us directly:</strong> name, work email, company,
+        country, the service you're enquiring about, and the contents of any message you
+        send via the contact form or email.
+      </li>
+      <li>
+        <strong>Technical information collected automatically:</strong> IP address (used
+        only for security and analytics aggregation, then anonymised), browser type and
+        version, device type, the pages you view, and how you arrived at the Site
+        (referrer URL).
+      </li>
+      <li>
+        <strong>Cookies and similar technologies:</strong> see Section 7 below and our
+        <a href="/cookies">cookie policy</a> for details.
+      </li>
+    </ul>
+
+    <h2>3. How we use your data</h2>
+    <p>We use the data above for the following purposes:</p>
+    <ul>
+      <li>To respond to your enquiry and provide the service you've asked about.</li>
+      <li>To send you contractual or service-related communications (e.g. proposals, scoping notes).</li>
+      <li>To improve the Site, measure aggregate traffic, and understand which content is useful.</li>
+      <li>To meet legal, regulatory, and tax obligations.</li>
+      <li>To prevent fraud, abuse, and unauthorised access.</li>
+    </ul>
+    <p>
+      We will <strong>not</strong> add you to a marketing list, sell your data, share it
+      with advertising networks, or pass it to anyone for their own marketing without your
+      explicit opt-in.
+    </p>
+
+    <h2>4. Lawful basis (UK / EU GDPR)</h2>
+    <p>For visitors in the UK and EU, we rely on the following lawful bases:</p>
+    <ul>
+      <li>
+        <strong>Performance of a contract</strong> — when responding to your enquiry,
+        scoping work, and delivering services you've engaged us for.
+      </li>
+      <li>
+        <strong>Legitimate interests</strong> — for site analytics, security, and
+        operational improvements, balanced against your rights and freedoms.
+      </li>
+      <li>
+        <strong>Consent</strong> — for any non-essential cookies and for any optional
+        marketing communications you choose to receive.
+      </li>
+      <li>
+        <strong>Legal obligation</strong> — for tax records, compliance, and
+        responding to lawful requests.
+      </li>
+    </ul>
+
+    <h2>5. Sharing your data</h2>
+    <p>
+      We share personal data only with the service providers we need to operate the
+      business, including (representative list — finalise based on your actual stack):
+    </p>
+    <ul>
+      <li>Web hosting and email delivery providers</li>
+      <li>Customer relationship management (CRM) and scheduling tools</li>
+      <li>Analytics providers (Google Analytics, Microsoft Clarity — when enabled)</li>
+      <li>Cloud productivity tools (Google Workspace, Notion)</li>
+      <li>Payment and accounting providers, where applicable</li>
+    </ul>
+    <p>
+      All third parties act as data processors under contract and are bound to use your
+      data only for the purposes we instruct.
+    </p>
+
+    <h2>6. International transfers</h2>
+    <p>
+      Some of our service providers are based outside the UK and EU (typically in the
+      United States). Where we transfer personal data internationally, we rely on
+      appropriate safeguards: UK Addendum to the EU Standard Contractual Clauses, EU
+      Standard Contractual Clauses, or adequacy decisions where they exist.
+    </p>
+
+    <h2>7. Cookies</h2>
+    <p>
+      We use a minimal set of essential and analytics cookies. By default, no analytics
+      or tracking cookies fire until you accept them via the cookie banner. Full details
+      and a list of cookies are in our <a href="/cookies">cookie policy</a>.
+    </p>
+
+    <h2>8. How long we keep your data</h2>
+    <p>
+      Enquiry data is kept for up to 24 months after our last interaction. Contractual
+      records are kept for 7 years after the engagement ends, in line with UK accounting
+      and tax requirements. Analytics data is anonymised after 14 months.
+    </p>
+
+    <h2>9. Your rights</h2>
+    <p>
+      Depending on your jurisdiction, you may have rights to: access your data, correct
+      inaccurate data, delete your data, restrict or object to processing, request
+      portability, and (for EU/UK residents) lodge a complaint with a supervisory
+      authority.
+    </p>
+    <ul>
+      <li>UK: the Information Commissioner's Office (<a href="https://ico.org.uk">ico.org.uk</a>).</li>
+      <li>EU: your national data protection authority.</li>
+      <li>
+        California (CCPA/CPRA), Virginia, Colorado, Connecticut, and other US states with
+        privacy laws: rights to access, delete, correct, and opt out of "sale" or
+        "sharing" of personal data. We don't sell or share data for cross-context
+        behavioural advertising.
+      </li>
+    </ul>
+    <p>
+      To exercise any of these rights, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      We'll respond within 30 days (UK/EU) or 45 days (California).
+    </p>
+
+    <h2>10. Security</h2>
+    <p>
+      We use industry-standard technical and organisational measures to protect personal
+      data: encrypted transit (TLS), access controls, principle of least privilege, and
+      vendor due diligence. No system is perfectly secure; we'll notify you and the
+      relevant authorities if a breach is likely to result in a risk to your rights.
+    </p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>
+      We may update this policy from time to time. Material changes will be flagged on
+      the Site and the "last updated" date above will reflect the most recent revision.
+    </p>
+
+    <h2>12. Contact</h2>
+    <p>
+      Questions about this policy or your data? Email
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+  </LegalLayout>
+</BaseLayout>
