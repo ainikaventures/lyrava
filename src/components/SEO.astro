@@ -9,7 +9,8 @@ const {
   title,
   description,
   path,
-  ogImage = "/og-default.png",
+  // Default OG: pre-rendered PNG of the brand OG SVG (see scripts/generate-og.mjs)
+  ogImage = "/brand/lyrava-og.png",
   ogType = "website",
   noindex = false,
   publishedAt,
@@ -55,15 +56,15 @@ const allSchemas = [organizationSchema(), websiteSchema(), ...jsonLd];
 {updatedAt && <meta property="article:modified_time" content={updatedAt} />}
 {author && <meta property="article:author" content={author} />}
 
-<!-- Twitter Card -->
+<!-- Twitter Card — uses the dedicated Twitter render of the brand mark -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={ogImageUrl} />
+<meta name="twitter:image" content={absoluteUrl("/brand/lyrava-twitter.png")} />
 
 <!-- Author / generator -->
 <meta name="author" content={SITE.name} />
-<meta name="theme-color" content="#1a1033" />
+<meta name="theme-color" content="#1A0E2C" />
 
 <!-- Search Console (set value in src/lib/site.ts when ready) -->
 {SITE.analytics.googleSiteVerification && (

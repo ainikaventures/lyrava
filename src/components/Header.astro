@@ -9,10 +9,10 @@ const isActive = (href: string) =>
 
 <header
   id="site-header"
-  class="sticky top-0 z-40 border-b border-white/[0.06] bg-ink/70 backdrop-blur-md supports-[backdrop-filter]:bg-ink/60"
+  class="sticky top-0 z-40 border-b border-white/[0.06] bg-nocturne/70 backdrop-blur-md supports-[backdrop-filter]:bg-nocturne/60"
 >
   <div class="container-wide flex h-16 items-center justify-between gap-6">
-    <Logo size={32} />
+    <Logo height={26} />
 
     <nav aria-label="Primary" class="hidden md:block">
       <ul class="flex items-center gap-1">
@@ -24,8 +24,8 @@ const isActive = (href: string) =>
               class:list={[
                 "rounded-full px-3 py-2 text-sm transition-colors",
                 isActive(item.href)
-                  ? "text-cloud"
-                  : "text-cloud/65 hover:text-cloud",
+                  ? "text-paper"
+                  : "text-paper/65 hover:text-paper",
               ]}
             >
               {item.label}
@@ -45,7 +45,7 @@ const isActive = (href: string) =>
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2.25"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -59,7 +59,7 @@ const isActive = (href: string) =>
         aria-controls="mobile-nav"
         aria-expanded="false"
         aria-label="Open menu"
-        class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cloud"
+        class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-paper"
       >
         <svg
           aria-hidden="true"
@@ -82,7 +82,7 @@ const isActive = (href: string) =>
   <div
     id="mobile-nav"
     hidden
-    class="md:hidden border-t border-white/[0.06] bg-ink/95 backdrop-blur"
+    class="md:hidden border-t border-white/[0.06] bg-nocturne/95 backdrop-blur"
   >
     <nav aria-label="Mobile" class="container-wide py-4">
       <ul class="flex flex-col gap-1">
@@ -94,8 +94,8 @@ const isActive = (href: string) =>
               class:list={[
                 "block rounded-lg px-3 py-3 text-base",
                 isActive(item.href)
-                  ? "bg-white/5 text-cloud"
-                  : "text-cloud/75 hover:bg-white/5 hover:text-cloud",
+                  ? "bg-white/5 text-paper"
+                  : "text-paper/75 hover:bg-white/5 hover:text-paper",
               ]}
             >
               {item.label}

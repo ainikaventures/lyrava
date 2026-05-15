@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Section from "@components/Section.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import SparkBackdrop from "@components/SparkBackdrop.astro";
+import SparkMark from "@components/SparkMark.astro";
 import CTACard from "@components/CTACard.astro";
 import FAQ from "@components/FAQ.astro";
 import { SERVICES } from "@lib/site";
@@ -63,15 +64,15 @@ const generalFaqs = [
 
       <div class="mx-auto mt-10 max-w-3xl text-center">
         <span class="eyebrow reveal">
-          <span class="h-1.5 w-1.5 rounded-full bg-glow-400 shadow-[0_0_8px_rgba(255,217,138,0.6)]"></span>
+          <span class="h-1.5 w-1.5 rounded-full bg-halo shadow-[0_0_8px_rgba(245,211,138,0.6)]"></span>
           What we do
         </span>
-        <h1 class="reveal mt-6 text-display-xl text-balance text-cloud">
+        <h1 class="reveal mt-6 text-display-xl text-balance text-paper">
           Four pillars.
-          <span class="gradient-text italic">One outcome.</span>
+          <span class="gradient-text">One outcome.</span>
         </h1>
-        <p class="reveal mt-6 text-pretty text-lg text-cloud/75 md:text-xl">
-          Lyrava is a focused automation agency. We don't do website redesigns, we don't
+        <p class="reveal mt-6 text-pretty text-lg text-paper/75 md:text-xl">
+          lyrava is a focused automation agency. We don't do website redesigns, we don't
           do paid media, we don't do "AI strategy" decks. We build the workflows, agents,
           pipelines, and CRM plumbing that compound — and we measure ourselves on hours
           returned to your team.
@@ -87,26 +88,24 @@ const generalFaqs = [
           <a href={`/services/${s.slug}`} class="card group block h-full">
             <div class="flex items-start justify-between gap-4">
               <div
-                class="flex h-11 w-11 items-center justify-center rounded-lg border border-starlight-200/15 bg-starlight-200/[0.04] text-starlight-200"
+                class="flex h-11 w-11 items-center justify-center rounded-lg border border-halo-soft/15 bg-halo-soft/[0.04] text-halo-soft"
                 style="filter: drop-shadow(0 0 6px rgba(254,249,231,0.18))"
               >
-                <svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                  <path d="M50 0 L52 48 L100 50 L52 52 L50 100 L48 52 L0 50 L48 48 Z" />
-                </svg>
+                <SparkMark size={20} />
               </div>
-              <span class="text-xs uppercase tracking-[0.18em] text-cloud/40">0{i + 1}</span>
+              <span class="eyebrow-mono text-paper/40">0{i + 1}</span>
             </div>
 
-            <h2 class="mt-6 text-2xl text-balance text-cloud">{s.title}</h2>
-            <p class="mt-3 text-pretty text-cloud/70">{s.blurb}</p>
+            <h2 class="mt-6 text-2xl text-balance text-paper">{s.title}</h2>
+            <p class="mt-3 text-pretty text-paper/70">{s.blurb}</p>
 
             <div class="mt-6 flex flex-wrap gap-2">
               {s.keywords.map((k) => (
-                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-cloud/60">{k}</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-paper/60">{k}</span>
               ))}
             </div>
 
-            <span class="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-starlight-200 transition-transform group-hover:translate-x-1">
+            <span class="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-halo-soft transition-transform group-hover:translate-x-1">
               Explore service
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14M13 5l7 7-7 7" />

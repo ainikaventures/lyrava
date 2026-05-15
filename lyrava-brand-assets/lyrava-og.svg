@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Lyrava">
+  <defs>
+    <radialGradient id="ogBg" cx="40%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#221440"></stop>
+      <stop offset="60%" stop-color="#170B2C"></stop>
+      <stop offset="100%" stop-color="#0A041C"></stop>
+    </radialGradient>
+    <radialGradient id="ogCore" cx="46%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="30%" stop-color="#FFFBF1"></stop>
+      <stop offset="65%" stop-color="#F8E4B2"></stop>
+      <stop offset="100%" stop-color="#F5D38A"></stop>
+    </radialGradient>
+    <radialGradient id="ogHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE9B8" stop-opacity="0.4"></stop>
+      <stop offset="60%" stop-color="#F5D38A" stop-opacity="0.08"></stop>
+      <stop offset="100%" stop-color="#F5D38A" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="ogGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" in="SourceGraphic" result="b1"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="22" in="SourceGraphic" result="b2"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="60" in="SourceGraphic" result="b3"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="b3"></feMergeNode>
+        <feMergeNode in="b2"></feMergeNode>
+        <feMergeNode in="b1"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogBg)"></rect>
+  <circle cx="320" cy="315" r="360" fill="url(#ogHalo)"></circle>
+  <g transform="translate(320,315)">
+    <g filter="url(#ogGlow)" opacity="0.9">
+      <path d="M -19 -218 A 19 19 0 0 1 19 -218 A 199 199 0 0 0 218 -19 A 19 19 0 0 1 218 19 A 199 199 0 0 0 19 218 A 19 19 0 0 1 -19 218 A 199 199 0 0 0 -218 19 A 19 19 0 0 1 -218 -19 A 199 199 0 0 0 -19 -218 Z" fill="url(#ogCore)"></path>
+    </g>
+    <path d="M -19 -218 A 19 19 0 0 1 19 -218 A 199 199 0 0 0 218 -19 A 19 19 0 0 1 218 19 A 199 199 0 0 0 19 218 A 19 19 0 0 1 -19 218 A 199 199 0 0 0 -218 19 A 19 19 0 0 1 -218 -19 A 199 199 0 0 0 -19 -218 Z" fill="url(#ogCore)"></path>
+  </g>
+  <text x="620" y="320" font-family="Outfit, Inter, system-ui, sans-serif" font-weight="600" font-size="120" letter-spacing="-4.8" fill="#F5EFE3">lyrava</text>
+  <text x="620" y="380" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" letter-spacing="0" fill="#9F94B5" opacity="0.85">Data, automation and engineering</text>
+  <text x="620" y="412" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" letter-spacing="0" fill="#9F94B5" opacity="0.85">for teams that want to move faster.</text>
+  <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" letter-spacing="0.12em" fill="#6F6585">
+    <text x="620" y="496">UK  ·  DELIVERY FROM INDIA</text>
+  </g>
+</svg>

@@ -36,7 +36,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: SITE.name,
     url: SITE.url,
-    logo: absoluteUrl("/logo.jpg"),
+    logo: absoluteUrl("/brand/lyrava-mark-glow.svg"),
     description: SITE.description,
     sameAs: Object.values(SITE.social).filter(Boolean),
     contactPoint: [
@@ -134,7 +134,7 @@ export function articleSchema(opts: {
     "@type": "Article",
     headline: opts.title,
     description: opts.description,
-    image: opts.image ? absoluteUrl(opts.image) : absoluteUrl("/og-default.png"),
+    image: opts.image ? absoluteUrl(opts.image) : absoluteUrl("/brand/lyrava-og.png"),
     datePublished: opts.publishedAt,
     dateModified: opts.updatedAt ?? opts.publishedAt,
     author: {
@@ -147,7 +147,7 @@ export function articleSchema(opts: {
       name: SITE.name,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/logo.jpg"),
+        url: absoluteUrl("/brand/lyrava-mark-glow.svg"),
       },
     },
     mainEntityOfPage: absoluteUrl(`/blog/${opts.slug}`),

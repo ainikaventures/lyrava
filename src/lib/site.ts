@@ -1,13 +1,20 @@
 /**
  * Single source of truth for site-wide config.
  * Update brand details, contact info, and nav here — every page reads from this file.
+ *
+ * Brand R1: the brand name is "lyrava" — always lowercase. Never `Lyrava`.
  */
 
 export const SITE = {
-  name: "Lyrava",
-  tagline: "Automation, AI agents, and revenue ops for ambitious teams.",
+  // Brand-correct (lowercase). Used as text content and as schema.org name.
+  name: "lyrava",
+  // Capitalized form, only for use at the START of a sentence in JSON-LD or
+  // SEO copy where leading-lowercase would read as a typo to a search bot.
+  // Avoid in user-facing copy.
+  legalName: "Lyrava Ltd",
+  tagline: "Data, automation and engineering for teams that want to move faster.",
   description:
-    "Lyrava is an automation agency for UK and US companies. We design and build business process automations, AI agents, marketing and sales workflows, and data pipelines that compound — not break.",
+    "lyrava is an automation and AI agency for teams in the UK and US. We design and build business process automation, AI agents, marketing & sales workflows, and data pipelines — delivered from India, governed in the UK.",
   url: "https://lyrava.com",
   defaultLocale: "en",
   locales: ["en-GB", "en-US"] as const,
@@ -23,7 +30,7 @@ export const SITE = {
   social: {
     linkedin: "https://www.linkedin.com/company/lyrava",
     twitter: "https://twitter.com/lyrava",
-    github: "https://github.com/lyrava",
+    github: "https://github.com/ainikaventures/lyrava",
   },
   // SearchConsole, GA4, Clarity — set when ready (left blank → snippets stay disabled)
   analytics: {

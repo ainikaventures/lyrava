@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" role="img" aria-label="Lyrava sparkle mark">
+  <defs>
+    <radialGradient id="lvBg" cx="50%" cy="48%" r="68%">
+      <stop offset="0%" stop-color="#221440"></stop>
+      <stop offset="55%" stop-color="#190C2E"></stop>
+      <stop offset="100%" stop-color="#0C0620"></stop>
+    </radialGradient>
+    <radialGradient id="lvCore" cx="46%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="30%" stop-color="#FFFBF1"></stop>
+      <stop offset="65%" stop-color="#F8E4B2"></stop>
+      <stop offset="100%" stop-color="#F5D38A"></stop>
+    </radialGradient>
+    <radialGradient id="lvHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE9B8" stop-opacity="0.55"></stop>
+      <stop offset="60%" stop-color="#F5D38A" stop-opacity="0.12"></stop>
+      <stop offset="100%" stop-color="#F5D38A" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="lvGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" in="SourceGraphic" result="b1"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="22" in="SourceGraphic" result="b2"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="72" in="SourceGraphic" result="b3"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="b3"></feMergeNode>
+        <feMergeNode in="b3"></feMergeNode>
+        <feMergeNode in="b2"></feMergeNode>
+        <feMergeNode in="b1"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="1200" rx="160" fill="url(#lvBg)"></rect>
+  <circle cx="600" cy="600" r="520" fill="url(#lvHalo)"></circle>
+  <g transform="translate(600,600)">
+    <g filter="url(#lvGlow)" opacity="0.9">
+      <path d="M -49.6 -570 A 49.6 49.6 0 0 1 49.6 -570 A 520.4 520.4 0 0 0 570 -49.6 A 49.6 49.6 0 0 1 570 49.6 A 520.4 520.4 0 0 0 49.6 570 A 49.6 49.6 0 0 1 -49.6 570 A 520.4 520.4 0 0 0 -570 49.6 A 49.6 49.6 0 0 1 -570 -49.6 A 520.4 520.4 0 0 0 -49.6 -570 Z" fill="url(#lvCore)"></path>
+    </g>
+    <path d="M -49.6 -570 A 49.6 49.6 0 0 1 49.6 -570 A 520.4 520.4 0 0 0 570 -49.6 A 49.6 49.6 0 0 1 570 49.6 A 520.4 520.4 0 0 0 49.6 570 A 49.6 49.6 0 0 1 -49.6 570 A 520.4 520.4 0 0 0 -570 49.6 A 49.6 49.6 0 0 1 -570 -49.6 A 520.4 520.4 0 0 0 -49.6 -570 Z" fill="url(#lvCore)"></path>
+  </g>
+</svg>

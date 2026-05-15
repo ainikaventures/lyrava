@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="i5Bg" cx="50%" cy="48%" r="65%">
+      <stop offset="0%" stop-color="#221440"></stop>
+      <stop offset="100%" stop-color="#0C0620"></stop>
+    </radialGradient>
+    <radialGradient id="i5Core" cx="46%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="30%" stop-color="#FFFBF1"></stop>
+      <stop offset="65%" stop-color="#F8E4B2"></stop>
+      <stop offset="100%" stop-color="#F5D38A"></stop>
+    </radialGradient>
+    <radialGradient id="i5Halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE9B8" stop-opacity="0.4"></stop>
+      <stop offset="100%" stop-color="#F5D38A" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#i5Bg)"></rect>
+  <circle cx="256" cy="256" r="220" fill="url(#i5Halo)"></circle>
+  <g transform="translate(256,256)">
+    <path d="M -21.1 -243.2 A 21.1 21.1 0 0 1 21.1 -243.2 A 222.1 222.1 0 0 0 243.2 -21.1 A 21.1 21.1 0 0 1 243.2 21.1 A 222.1 222.1 0 0 0 21.1 243.2 A 21.1 21.1 0 0 1 -21.1 243.2 A 222.1 222.1 0 0 0 -243.2 21.1 A 21.1 21.1 0 0 1 -243.2 -21.1 A 222.1 222.1 0 0 0 -21.1 -243.2 Z" fill="url(#i5Core)"></path>
+  </g>
+</svg>

@@ -21,14 +21,14 @@ const { eyebrow, title, accent, lede, breadcrumbs } = Astro.props;
 
     <div class="mx-auto mt-10 max-w-3xl text-center">
       <span class="eyebrow reveal">
-        <span class="h-1.5 w-1.5 rounded-full bg-glow-400 shadow-[0_0_8px_rgba(255,217,138,0.6)]"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-halo shadow-[0_0_8px_rgba(245,211,138,0.6)]"></span>
         {eyebrow}
       </span>
-      <h1 class="reveal mt-6 text-display-xl text-balance text-cloud">
+      <h1 class="reveal mt-6 text-display-xl text-balance text-paper">
         {title}
-        {accent && <> <span class="gradient-text italic">{accent}</span></>}
+        {accent && <> <span class="gradient-text">{accent}</span></>}
       </h1>
-      <p class="reveal mt-6 text-pretty text-lg text-cloud/75 md:text-xl">{lede}</p>
+      <p class="reveal mt-6 text-pretty text-lg text-paper/75 md:text-xl">{lede}</p>
 
       <div class="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a href="/contact" class="btn-primary">Book a discovery call</a>

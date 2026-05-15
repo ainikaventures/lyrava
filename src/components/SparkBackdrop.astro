@@ -1,70 +1,62 @@
 ---
-// Hero backdrop echoing the Lyrava logo: a 4-point star with elongated,
-// lens-flare-like rays. Pure SVG + CSS — no JS, no third-party assets.
+import SparkMark from "./SparkMark.astro";
 
+/**
+ * Hero backdrop using the official brand sparkle geometry. Decorative only —
+ * brand R6 ("one glow, never two") is satisfied because the page mark itself
+ * is rendered flat. The bloom layer is a Halo-coloured radial wash, not a
+ * recoloured mark.
+ */
 interface Props {
   /** Subtle mode dims everything for use behind dense content */
   subtle?: boolean;
 }
 const { subtle = false } = Astro.props;
-
-// 4-point star with elongated rays: drawn as two crossed thin diamonds.
-// Matches the silhouette of the logo's spark (long horizontal/vertical
-// rays, narrow waist, brilliant core).
-const sparkPath =
-  "M50 0 L52 48 L100 50 L52 52 L50 100 L48 52 L0 50 L48 48 Z";
 ---
 
 <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-  <!-- Warm halo at the top — the bloom around the star, not the star itself -->
+  <!-- Warm Halo bloom at the top — atmosphere, not a mark -->
   <div
     class:list={[
-      "absolute left-1/2 top-[-32%] h-[700px] w-[1100px] -translate-x-1/2 rounded-full bg-spark-radial blur-2xl",
+      "absolute left-1/2 top-[-30%] h-[700px] w-[1100px] -translate-x-1/2 rounded-full bg-halo-radial blur-2xl",
       subtle && "opacity-60",
     ]}
   ></div>
 
-  <!-- A single soft cool-white wash near the star -->
+  <!-- Cool starlight wash under the headline -->
   <div
     class:list={[
-      "absolute left-1/2 top-[8%] h-[320px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(254,249,231,0.10)_0%,_transparent_70%)] blur-2xl",
+      "absolute left-1/2 top-[10%] h-[320px] w-[520px] -translate-x-1/2 rounded-full blur-2xl",
       subtle && "opacity-60",
     ]}
+    style="background: radial-gradient(circle, rgba(255,241,201,0.10) 0%, transparent 70%);"
   ></div>
 
-  <!-- Floating long-rayed sparks — the same silhouette as the logo -->
-  <svg
-    class="absolute left-[7%] top-[16%] h-16 w-16 animate-twinkle text-starlight-200/45"
-    viewBox="0 0 100 100"
-    fill="currentColor"
-    style="filter: drop-shadow(0 0 12px rgba(254,249,231,0.35))"
+  <!-- Floating brand-geometry sparks — currentColor + drop shadow for soft glow -->
+  <div
+    class="absolute left-[7%] top-[16%] animate-twinkle text-paper/40"
+    style="filter: drop-shadow(0 0 14px rgba(255,241,201,0.35))"
   >
-    <path d={sparkPath} />
-  </svg>
-  <svg
-    class="absolute right-[12%] top-[44%] h-10 w-10 animate-twinkle text-starlight-200/35"
-    style="animation-delay: 1.4s; filter: drop-shadow(0 0 10px rgba(254,249,231,0.3))"
-    viewBox="0 0 100 100"
-    fill="currentColor"
+    <SparkMark size={64} />
+  </div>
+  <div
+    class="absolute right-[12%] top-[42%] animate-twinkle text-paper/30"
+    style="animation-delay: 1.4s; filter: drop-shadow(0 0 10px rgba(255,241,201,0.3))"
   >
-    <path d={sparkPath} />
-  </svg>
-  <svg
-    class="absolute left-[22%] bottom-[12%] h-7 w-7 animate-twinkle text-starlight-200/30"
-    style="animation-delay: 2.6s; filter: drop-shadow(0 0 8px rgba(254,249,231,0.25))"
-    viewBox="0 0 100 100"
-    fill="currentColor"
+    <SparkMark size={40} />
+  </div>
+  <div
+    class="absolute left-[22%] bottom-[14%] animate-twinkle text-paper/25"
+    style="animation-delay: 2.6s; filter: drop-shadow(0 0 8px rgba(255,241,201,0.25))"
   >
-    <path d={sparkPath} />
-  </svg>
-  <svg
-    class="absolute right-[28%] bottom-[22%] h-5 w-5 animate-twinkle text-starlight-200/25"
+    <SparkMark size={28} />
+  </div>
+  <div
+    class="absolute right-[28%] bottom-[24%] animate-twinkle text-paper/20"
     style="animation-delay: 0.6s"
-    viewBox="0 0 100 100"
-    fill="currentColor"
   >
-    <path d={sparkPath} />
-  </svg>
+    <SparkMark size={20} />
+  </div>
 
   <!-- Faint grid for texture -->
   <svg class="absolute inset-0 h-full w-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">

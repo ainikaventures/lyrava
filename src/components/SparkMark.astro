@@ -1,0 +1,33 @@
+---
+/**
+ * Inline brand sparkle mark — official geometry from the brand pack
+ * (sparkle = four cubic-arc arms rotated about the centre, scaling rule:
+ *  waist offset = 0.087·r, tip extent = 0.95·r, cap radius = waist offset).
+ * Uses currentColor so the surrounding text colour flows through (per
+ * brand R5: never recolour the gradient — for a coloured mark, use a
+ * gradient-bearing SVG asset instead).
+ */
+interface Props {
+  size?: number;
+  class?: string;
+  /** Decorative sparks set ariaHidden=true; structural marks pass an aria-label */
+  ariaLabel?: string;
+}
+const { size = 16, class: className = "", ariaLabel } = Astro.props;
+const isDecorative = !ariaLabel;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 400"
+  width={size}
+  height={size}
+  role={isDecorative ? "presentation" : "img"}
+  aria-hidden={isDecorative ? "true" : undefined}
+  aria-label={ariaLabel}
+  class:list={["spark-mark", className]}
+>
+  <g transform="translate(200,200)" fill="currentColor">
+    <path d="M -16.5 -190 A 16.5 16.5 0 0 1 16.5 -190 A 173.5 173.5 0 0 0 190 -16.5 A 16.5 16.5 0 0 1 190 16.5 A 173.5 173.5 0 0 0 16.5 190 A 16.5 16.5 0 0 1 -16.5 190 A 173.5 173.5 0 0 0 -190 16.5 A 16.5 16.5 0 0 1 -190 -16.5 A 173.5 173.5 0 0 0 -16.5 -190 Z" />
+  </g>
+</svg>

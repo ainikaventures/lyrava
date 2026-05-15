@@ -19,8 +19,8 @@ const { cases, title = "What this looks like in practice", blurb } = Astro.props
   <div class="mx-auto max-w-2xl text-center">
     <span class="eyebrow">Real-world</span>
     <h2 id="usecases-heading" class="mt-4 text-display-lg text-balance">{title}</h2>
-    {blurb && <p class="mx-auto mt-4 max-w-prose text-pretty text-cloud/70">{blurb}</p>}
-    <p class="mx-auto mt-3 max-w-prose text-xs uppercase tracking-[0.16em] text-cloud/40">
+    {blurb && <p class="mx-auto mt-4 max-w-prose text-pretty text-paper/70">{blurb}</p>}
+    <p class="mx-auto mt-3 max-w-prose eyebrow-mono text-paper/40">
       Figures are typical ranges from comparable engagements
     </p>
   </div>
@@ -28,17 +28,17 @@ const { cases, title = "What this looks like in practice", blurb } = Astro.props
   <ul class="mt-12 grid gap-5 md:grid-cols-3">
     {cases.map((c, i) => (
       <li class="reveal card flex flex-col" style={`transition-delay:${i * 70}ms`}>
-        <div class="font-display text-4xl text-cloud">
+        <div class="font-display text-4xl text-paper">
           <span class="gradient-text-glow">{c.metric}</span>
         </div>
-        <div class="mt-1 text-xs uppercase tracking-[0.16em] text-cloud/55">{c.metricLabel}</div>
+        <div class="mt-1 eyebrow-mono text-paper/55">{c.metricLabel}</div>
 
-        <h3 class="mt-6 text-lg text-cloud">{c.title}</h3>
-        <p class="mt-2 text-sm text-cloud/65">{c.context}</p>
+        <h3 class="mt-6 text-lg text-paper">{c.title}</h3>
+        <p class="mt-2 text-sm text-paper/65">{c.context}</p>
 
         <div class="mt-auto pt-5">
           <div class="divider-line"></div>
-          <p class="mt-4 text-sm text-pretty text-cloud/85">{c.outcome}</p>
+          <p class="mt-4 text-sm text-pretty text-paper/85">{c.outcome}</p>
         </div>
       </li>
     ))}

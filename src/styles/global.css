@@ -1,7 +1,11 @@
-/* Self-hosted fonts (no Google CDN — better TTFB and GDPR-friendlier for UK traffic). */
+/* ─────────────────────────────────────────────────────────────────
+   Self-hosted fonts — no Google CDN (better TTFB, GDPR-friendlier).
+   Brand spec: Outfit (display), Inter (body), JetBrains Mono (eyebrows).
+   Cap font-weight at 600; ≥700 reads as cheap and is forbidden.
+   ───────────────────────────────────────────────────────────────── */
 @import "@fontsource-variable/inter/index.css";
-@import "@fontsource/instrument-serif/400.css";
-@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource-variable/outfit/index.css";
+@import "@fontsource-variable/jetbrains-mono/index.css";
 
 @tailwind base;
 @tailwind components;
@@ -10,12 +14,17 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --color-bg: #140b26;
-    --color-bg-deep: #0d0618;
-    --color-text: #f5f3ff;
-    --color-text-muted: rgba(245, 243, 255, 0.7);
-    --color-starlight: #fef9e7;
-    --color-glow: #ffd98a;
+    /* Brand tokens — keep names in sync with the brand pack README. */
+    --nocturne: #1A0E2C;
+    --nocturne-deep: #0E0820;
+    --nocturne-lift: #221440;
+    --lumen: #FFFFFF;
+    --halo-soft: #FFF1C9;
+    --halo: #F5D38A;
+    --paper: #F5EFE3;
+    --smoke: #EFE8D8;
+    --ink: #0E0E10;
+    --ink-soft: #5F5E5A;
   }
 
   html {
@@ -26,34 +35,33 @@
   }
 
   body {
-    @apply bg-ink text-cloud font-sans;
+    @apply bg-nocturne text-paper font-sans;
     background-image:
-      radial-gradient(ellipse 65% 35% at 50% -8%, rgba(254, 249, 231, 0.06), transparent 70%),
-      radial-gradient(ellipse 55% 25% at 92% 108%, rgba(255, 217, 138, 0.04), transparent 70%);
+      radial-gradient(ellipse 65% 35% at 50% -8%, rgba(245, 211, 138, 0.07), transparent 70%),
+      radial-gradient(ellipse 55% 25% at 92% 108%, rgba(245, 211, 138, 0.04), transparent 70%);
     background-attachment: fixed;
   }
 
   ::selection {
-    background: rgba(254, 249, 231, 0.25);
-    color: #fef9e7;
+    background: rgba(245, 211, 138, 0.28);
+    color: var(--halo-soft);
   }
 
   /* Visible focus ring everywhere — required for WCAG 2.2 */
   :focus-visible {
-    outline: 2px solid #fef9e7;
+    outline: 2px solid var(--halo-soft);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight text-cloud;
+    @apply font-display tracking-tight text-paper;
+    font-weight: 600;
   }
 
   /* prefers-reduced-motion — honor user OS setting */
   @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       animation-duration: 0.001ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.001ms !important;
@@ -76,43 +84,62 @@
     @apply sr-only;
   }
   .skip-link:focus {
-    @apply not-sr-only fixed left-4 top-4 z-[100] rounded-md bg-starlight-200 px-4 py-2 text-sm font-medium text-ink_text shadow-starlight-sm;
+    @apply not-sr-only fixed left-4 top-4 z-[100] rounded-md bg-paper px-4 py-2 text-sm text-ink;
+    box-shadow: 0 0 24px -8px rgba(245, 211, 138, 0.6);
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline-offset-4;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm transition-all duration-200 focus-visible:outline-offset-4;
+    font-weight: 500;
     min-height: 44px; /* WCAG tap target */
   }
 
-  /* Primary CTA = the spark itself: cool warm-white with a gold halo on hover */
+  /* Primary CTA — Paper surface on Nocturne reads as "the spark on the card" */
   .btn-primary {
-    @apply btn bg-starlight-gradient text-ink_text shadow-starlight-sm hover:shadow-starlight hover:-translate-y-0.5;
+    @apply btn bg-paper text-ink shadow-starlight-sm hover:shadow-starlight hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply btn border border-white/15 bg-white/5 text-cloud backdrop-blur hover:bg-white/10 hover:-translate-y-0.5;
+    @apply btn border border-white/15 bg-white/5 text-paper backdrop-blur hover:bg-white/10 hover:-translate-y-0.5;
   }
 
   .btn-ghost {
-    @apply btn text-cloud/80 hover:text-cloud hover:bg-white/5;
+    @apply btn text-paper/80 hover:text-paper hover:bg-white/5;
   }
 
+  /* Eyebrow — 11px JetBrains Mono uppercase per brand R: ALL CAPS only here */
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-starlight-200/90;
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono uppercase text-paper/85;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    line-height: 1;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .eyebrow-mono {
+    @apply font-mono uppercase text-paper/65;
+    font-size: 11px;
+    letter-spacing: 0.16em;
   }
 
   .card {
-    @apply relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 transition-all duration-300 hover:border-starlight-200/25 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-card;
+    @apply relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 transition-all duration-300 hover:border-halo/20 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-card;
   }
 
-  /* Default heading accent: cool starlight cream — subtle, matches the spark */
+  /* Default heading accent: warm cream-gold (Halo soft → Halo) */
   .gradient-text {
-    @apply bg-starlight-gradient bg-clip-text text-transparent;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF1C9 50%, #F5D38A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
-  /* Optional warm-bloom accent — use sparingly, for tiny flourishes only */
+  /* Warm halo accent — for tiny flourishes (case-study metrics, step numbers) */
   .gradient-text-glow {
-    @apply bg-gold-gradient bg-clip-text text-transparent;
+    background: linear-gradient(135deg, #FFF1C9 0%, #F5D38A 60%, #E0B85E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .divider-line {
@@ -131,6 +158,14 @@
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* The brand sparkle — single source of truth for the geometry.
+     Uses currentColor so the surrounding text colour flows through.
+     Drop wherever a small inline mark belongs. */
+  .spark-mark {
+    display: inline-block;
+    color: currentColor;
   }
 }
 

@@ -29,18 +29,19 @@ const footerNav = [
 ];
 ---
 
-<footer class="relative mt-32 border-t border-white/[0.06] bg-ink-deep">
+<footer class="relative mt-32 border-t border-white/[0.06] bg-nocturne-deep">
   <div class="container-wide py-16 md:py-20">
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">
-        <Logo size={36} />
-        <p class="mt-6 max-w-sm text-pretty text-cloud/70">
-          {SITE.tagline} Serving the UK and US from a globally distributed team.
+        <Logo height={32} />
+        <p class="mt-6 max-w-sm text-pretty text-paper/70">
+          {SITE.tagline}
         </p>
+        <p class="eyebrow-mono mt-4">UK · Delivery from India</p>
         <div class="mt-6 flex flex-wrap items-center gap-3">
           <a
             href={`mailto:${SITE.email}`}
-            class="text-sm text-cloud/80 underline-offset-4 hover:text-starlight-200 hover:underline"
+            class="text-sm text-paper/80 underline-offset-4 hover:text-halo-soft hover:underline"
           >
             {SITE.email}
           </a>
@@ -48,9 +49,9 @@ const footerNav = [
         <div class="mt-6 flex items-center gap-3">
           <a
             href={SITE.social.linkedin}
-            aria-label="Lyrava on LinkedIn"
+            aria-label="lyrava on LinkedIn"
             rel="noopener"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cloud/80 transition hover:text-starlight-200"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-paper/80 transition hover:text-halo-soft"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.02h4.56V24H.22V8.02zM8.5 8.02h4.37v2.18h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v9.18h-4.56v-8.14c0-1.94-.04-4.44-2.71-4.44-2.71 0-3.13 2.12-3.13 4.3V24H8.5V8.02z" />
@@ -58,9 +59,9 @@ const footerNav = [
           </a>
           <a
             href={SITE.social.twitter}
-            aria-label="Lyrava on X / Twitter"
+            aria-label="lyrava on X / Twitter"
             rel="noopener"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cloud/80 transition hover:text-starlight-200"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-paper/80 transition hover:text-halo-soft"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.95l-5.44-6.74L4.4 22H1.14l8.02-9.16L1 2h7.13l4.92 6.18L18.244 2zm-1.22 18h1.93L7.07 4H5.04l11.984 16z" />
@@ -68,9 +69,9 @@ const footerNav = [
           </a>
           <a
             href={SITE.social.github}
-            aria-label="Lyrava on GitHub"
+            aria-label="lyrava on GitHub"
             rel="noopener"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cloud/80 transition hover:text-starlight-200"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-paper/80 transition hover:text-halo-soft"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.17a10.95 10.95 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.59.23 2.76.11 3.05.74.8 1.18 1.82 1.18 3.07 0 4.39-2.69 5.36-5.25 5.64.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z" />
@@ -82,15 +83,13 @@ const footerNav = [
       <div class="grid gap-8 sm:grid-cols-3 lg:col-span-7">
         {footerNav.map((col) => (
           <nav aria-label={col.title}>
-            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-starlight-200/75">
-              {col.title}
-            </h3>
+            <h3 class="eyebrow-mono">{col.title}</h3>
             <ul class="mt-4 space-y-2.5">
               {col.links.map((l) => (
                 <li>
                   <a
                     href={l.href}
-                    class="text-sm text-cloud/70 transition-colors hover:text-cloud"
+                    class="text-sm text-paper/70 transition-colors hover:text-paper"
                   >
                     {l.label}
                   </a>
@@ -104,10 +103,10 @@ const footerNav = [
 
     <div class="divider-line my-10"></div>
 
-    <div class="flex flex-col items-start justify-between gap-4 text-xs text-cloud/55 sm:flex-row sm:items-center">
-      <p>&copy; {year} {SITE.name}. All rights reserved.</p>
+    <div class="flex flex-col items-start justify-between gap-4 text-xs text-paper/55 sm:flex-row sm:items-center">
+      <p>&copy; {year} {SITE.legalName}. All rights reserved.</p>
       <p class="max-w-md text-pretty sm:text-right">
-        Lyrava is a trading name. Registered office and company number to be confirmed.
+        {SITE.legalName} is registered in England &amp; Wales. Company number to be confirmed.
       </p>
     </div>
   </div>

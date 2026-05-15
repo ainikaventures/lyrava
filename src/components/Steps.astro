@@ -17,18 +17,18 @@ const { steps, title = "How we solve it", blurb } = Astro.props;
     <div class="lg:col-span-5">
       <span class="eyebrow">Approach</span>
       <h2 id="steps-heading" class="mt-4 text-display-lg text-balance">{title}</h2>
-      {blurb && <p class="mt-5 text-pretty text-cloud/70">{blurb}</p>}
+      {blurb && <p class="mt-5 text-pretty text-paper/70">{blurb}</p>}
     </div>
 
     <ol class="lg:col-span-7 space-y-4">
       {steps.map((s, i) => (
         <li class="reveal flex gap-5 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6">
-          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-starlight-200/15 bg-starlight-200/[0.06] font-display text-starlight-200">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-halo-soft/15 bg-halo-soft/[0.06] font-display text-halo-soft">
             {i + 1}
           </div>
           <div>
-            <h3 class="text-lg text-cloud">{s.title}</h3>
-            <p class="mt-2 text-sm text-pretty text-cloud/70">{s.body}</p>
+            <h3 class="text-lg text-paper">{s.title}</h3>
+            <p class="mt-2 text-sm text-pretty text-paper/70">{s.body}</p>
           </div>
         </li>
       ))}

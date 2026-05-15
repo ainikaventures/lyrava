@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <radialGradient id="i9Bg" cx="50%" cy="48%" r="65%">
+      <stop offset="0%" stop-color="#1F1238"></stop>
+      <stop offset="100%" stop-color="#0E0820"></stop>
+    </radialGradient>
+    <radialGradient id="i9Core" cx="46%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="55%" stop-color="#FFF1C9"></stop>
+      <stop offset="100%" stop-color="#F5D38A"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="192" height="192" rx="42" fill="url(#i9Bg)"></rect>
+  <g transform="translate(96,96)">
+    <path d="M -7.9 -91.2 A 7.9 7.9 0 0 1 7.9 -91.2 A 83.3 83.3 0 0 0 91.2 -7.9 A 7.9 7.9 0 0 1 91.2 7.9 A 83.3 83.3 0 0 0 7.9 91.2 A 7.9 7.9 0 0 1 -7.9 91.2 A 83.3 83.3 0 0 0 -91.2 7.9 A 7.9 7.9 0 0 1 -91.2 -7.9 A 83.3 83.3 0 0 0 -7.9 -91.2 Z" fill="url(#i9Core)"></path>
+  </g>
+</svg>

@@ -5,47 +5,51 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand palette extracted from the Lyrava star logo:
-        // a near-black aubergine background with a cool-white spark and a
-        // faint warm bloom. Gold is an accent, not the headline color.
+        // ────────────────────────────────────────────────────────────────
+        // Lyrava brand tokens (v02 · "the sparkle" · May 2026)
+        // These are the only colours that may appear on a branded surface.
+        // Halo/Lumen live INSIDE the mark — they are not generic UI accents.
+        // ────────────────────────────────────────────────────────────────
+
+        // Dark surfaces
+        nocturne: {
+          DEFAULT: "#1A0E2C", // Primary dark surface; the mark's aubergine card
+          deep: "#0E0820", // Vignette edge of card gradient
+          lift: "#221440", // Centre of card gradient
+        },
+
+        // Sparkle palette — these belong to the mark; use sparingly in UI
+        lumen: "#FFFFFF",
+        halo: {
+          DEFAULT: "#F5D38A", // Outer-stop, warm cream-gold
+          soft: "#FFF1C9", // Mid-stop of core gradient
+        },
+
+        // Light surfaces
+        paper: "#F5EFE3", // Warm cream
+        smoke: "#EFE8D8", // Secondary light surface
+
+        // Text
         ink: {
-          DEFAULT: "#140b26", // deep aubergine — primary background
-          deep: "#0d0618",
-          soft: "#1d1335",
-          line: "#241942",
+          DEFAULT: "#0E0E10", // Body text on light
+          soft: "#5F5E5A", // Secondary text on light
         },
-        // Warm-white "starlight" — the dominant accent, used for primary CTAs
-        starlight: {
-          DEFAULT: "#fef9e7",
-          50: "#fffefa",
-          100: "#fefcf2",
-          200: "#fef9e7", // primary cream
-          300: "#fcf2d2",
-        },
-        // Gold "bloom" — used sparingly: hover glows, eyebrow dots, small accents
-        glow: {
-          50: "#fefcf2",
-          100: "#fef9e7",
-          200: "#fdf1c8",
-          300: "#fbe49a",
-          400: "#ffd98a",
-          500: "#f5c25e",
-          600: "#d99a3a",
-          700: "#a8762b",
-        },
-        cream: "#fafaf9",
-        ink_text: "#0f0a1f",
-        cloud: "#f5f3ff",
       },
       fontFamily: {
+        // Outfit for wordmark + display headings (cap weight at 600)
+        display: ['"Outfit Variable"', "Outfit", "Inter", "system-ui", "sans-serif"],
+        // Inter for body + UI
         sans: ['"Inter Variable"', "Inter", "system-ui", "sans-serif"],
-        display: ['"Instrument Serif"', "Georgia", "serif"],
+        // JetBrains Mono for eyebrows, captions, technical metadata
+        mono: ['"JetBrains Mono Variable"', "JetBrains Mono", "ui-monospace", "monospace"],
       },
       fontSize: {
-        // editorial-leaning scale
-        "display-2xl": ["clamp(3rem, 6vw + 1rem, 5.75rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
-        "display-xl": ["clamp(2.5rem, 4.5vw + 1rem, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
-        "display-lg": ["clamp(2rem, 3vw + 1rem, 3.25rem)", { lineHeight: "1.1", letterSpacing: "-0.015em" }],
+        // Editorial-leaning fluid scale for headings (Outfit 600)
+        "display-2xl": ["clamp(3rem, 6vw + 1rem, 5.75rem)", { lineHeight: "1.02", letterSpacing: "-0.04em" }],
+        "display-xl": ["clamp(2.5rem, 4.5vw + 1rem, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.04em" }],
+        "display-lg": ["clamp(2rem, 3vw + 1rem, 3.25rem)", { lineHeight: "1.1", letterSpacing: "-0.035em" }],
+        // 11px monospace eyebrow (per brand R: ALL CAPS only here)
+        eyebrow: ["11px", { lineHeight: "1", letterSpacing: "0.16em" }],
       },
       maxWidth: {
         prose: "68ch",
@@ -53,24 +57,25 @@ export default {
         wide: "1320px",
       },
       boxShadow: {
-        // Cool-white core glow (mimics the spark itself)
-        starlight: "0 0 60px -16px rgba(254, 249, 231, 0.55), 0 0 24px -6px rgba(254, 249, 231, 0.4)",
-        "starlight-sm": "0 0 28px -8px rgba(254, 249, 231, 0.4)",
-        // Warm gold bloom (mimics the halo around the spark) — for hover
-        glow: "0 0 80px -20px rgba(255, 217, 138, 0.35)",
-        "glow-sm": "0 0 32px -8px rgba(255, 217, 138, 0.25)",
+        // Cool starlight core glow (mimics the sparkle itself)
+        starlight:
+          "0 0 60px -16px rgba(255, 255, 255, 0.45), 0 0 24px -6px rgba(255, 241, 201, 0.4)",
+        "starlight-sm": "0 0 28px -8px rgba(255, 241, 201, 0.4)",
+        // Warm gold bloom (the halo around the spark)
+        glow: "0 0 80px -20px rgba(245, 211, 138, 0.35)",
+        "glow-sm": "0 0 32px -8px rgba(245, 211, 138, 0.25)",
         card: "0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 32px -12px rgba(0,0,0,0.5)",
       },
       backgroundImage: {
-        // Subtle warm halo for hero — the bloom around the star, not the star itself
-        "spark-radial":
-          "radial-gradient(ellipse 70% 45% at 50% -10%, rgba(255,217,138,0.10), transparent 70%)",
-        // Cool-white CTA — primary surface
-        "starlight-gradient":
-          "linear-gradient(180deg, #ffffff 0%, #fef9e7 100%)",
-        // Warm bloom — secondary, for accents and small flourishes only
-        "gold-gradient":
-          "linear-gradient(135deg, #fef9e7 0%, #ffd98a 60%, #f5c25e 100%)",
+        // Card gradient that matches the mark's Nocturne lift→Nocturne deep
+        "card-gradient":
+          "radial-gradient(ellipse 60% 55% at 50% 40%, #221440 0%, #1A0E2C 60%, #0E0820 100%)",
+        // Subtle hero halo — gold bloom just visible at the top edge
+        "halo-radial":
+          "radial-gradient(ellipse 70% 45% at 50% -10%, rgba(245, 211, 138, 0.10), transparent 70%)",
+        // Sparkle core gradient (Lumen → Halo soft → Halo). Mark-only — NEVER recolour.
+        "spark-core":
+          "radial-gradient(circle at 46% 46%, #FFFFFF 0%, #FFF1C9 60%, #F5D38A 100%)",
       },
       animation: {
         "fade-up": "fadeUp 600ms cubic-bezier(0.22, 1, 0.36, 1) both",
@@ -87,8 +92,8 @@ export default {
           "100%": { opacity: "1" },
         },
         twinkle: {
-          "0%, 100%": { opacity: "0.6", transform: "scale(1)" },
-          "50%": { opacity: "1", transform: "scale(1.05)" },
+          "0%, 100%": { opacity: "0.55", transform: "scale(1)" },
+          "50%": { opacity: "0.95", transform: "scale(1.06)" },
         },
       },
     },

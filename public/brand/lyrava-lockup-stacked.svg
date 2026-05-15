@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" width="480" height="560" role="img" aria-label="Lyrava stacked lockup">
+  <defs>
+    <radialGradient id="lsBg" cx="50%" cy="48%" r="65%">
+      <stop offset="0%" stop-color="#1F1238"></stop>
+      <stop offset="100%" stop-color="#0E0820"></stop>
+    </radialGradient>
+    <radialGradient id="lsCore" cx="46%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="55%" stop-color="#FFF1C9"></stop>
+      <stop offset="100%" stop-color="#F5D38A"></stop>
+    </radialGradient>
+  </defs>
+  <rect x="80" y="40" width="320" height="320" rx="56" fill="url(#lsBg)"></rect>
+  <g transform="translate(240,200)">
+    <path d="M -13.2 -152 A 13.2 13.2 0 0 1 13.2 -152 A 138.8 138.8 0 0 0 152 -13.2 A 13.2 13.2 0 0 1 152 13.2 A 138.8 138.8 0 0 0 13.2 152 A 13.2 13.2 0 0 1 -13.2 152 A 138.8 138.8 0 0 0 -152 13.2 A 13.2 13.2 0 0 1 -152 -13.2 A 138.8 138.8 0 0 0 -13.2 -152 Z" fill="url(#lsCore)"></path>
+  </g>
+  <text x="240" y="490" text-anchor="middle" font-family="Outfit, Inter, system-ui, sans-serif" font-weight="600" font-size="92" letter-spacing="-3.6" fill="#1A0E2C">lyrava</text>
+</svg>
