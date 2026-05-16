@@ -2,14 +2,14 @@
 /**
  * Header / footer brand mark.
  *
- * Uses the official brand SVG assets — never the JPG. The wordmark already
+ * Uses the official brand SVG assets . never the JPG. The wordmark already
  * includes the terminal sparkle (brand R2: "the sparkle is the dot"), so we
  * don't add a separate mark beside it.
  *
  * Variants:
- *   - "wordmark" (default) — wordmark only, ideal for header chrome
- *   - "lockup"             — mark card + wordmark, ideal for marketing surfaces
- *   - "mark"               — small standalone mark, e.g. tight footer slot
+ *   - "wordmark" (default) . wordmark only, ideal for header chrome
+ *   - "lockup"             . mark card + wordmark, ideal for marketing surfaces
+ *   - "mark"               . small standalone mark, e.g. tight footer slot
  */
 interface Props {
   variant?: "wordmark" | "lockup" | "mark";
@@ -39,7 +39,7 @@ const width = Math.round(height * ratio);
 <a
   href={href}
   class:list={["group inline-flex items-center", className]}
-  aria-label="lyrava — home"
+  aria-label="lyrava, home"
 >
   <img
     src={src}

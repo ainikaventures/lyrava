@@ -6,9 +6,9 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import CTACard from "@components/CTACard.astro";
 
 const seo = {
-  title: "Blog — Notes on Automation, AI Agents, and Revenue Ops",
+  title: "Blog: notes on automation, AI agents and revenue ops · lyrava",
   description:
-    "Practical notes on business process automation, AI agents, and revenue operations — from the lyrava team. No thought-leadership filler; just things we've learned shipping work.",
+    "Practical notes on business process automation, AI agents and revenue operations from the lyrava team. No thought-leadership filler. Just things we've learned shipping work.",
   path: "/blog",
 };
 
@@ -17,20 +17,20 @@ const breadcrumbs = [
   { name: "Blog", href: "/blog" },
 ];
 
-// Posts get added in Step 4 — Astro content collections, Markdown-based.
+// Posts get added later via Astro content collections (Markdown).
 const upcoming = [
   {
-    title: "How Business Process Automation Cuts Operational Costs by 30%: A 2026 Guide for UK & US SMEs",
+    title: "How business process automation cuts operational costs by 30%: a 2026 guide for UK and US SMEs",
     summary:
       "Where the 30% number actually comes from, why most automation projects miss it, and the playbook we use to hit it inside a quarter.",
   },
   {
-    title: "Zapier vs Make vs n8n: Which Automation Platform Is Right for Your Business?",
+    title: "Zapier vs Make vs n8n: which automation platform is right for your business?",
     summary:
       "An opinionated comparison from someone who ships on all three. Pricing breakdowns, sweet spots, anti-patterns, and the questions to ask before you commit.",
   },
   {
-    title: "Building Your First AI Agent: A Non-Technical Founder's Roadmap",
+    title: "Building your first AI agent: a non-technical founder's roadmap",
     summary:
       "What an agent actually is, how to scope a useful one, what to watch out for, and how to know when to call in help. Written for the founder, not the engineer.",
   },
@@ -52,9 +52,9 @@ const upcoming = [
           <span class="gradient-text">honestly written.</span>
         </h1>
         <p class="reveal mt-6 text-pretty text-lg text-paper/75 md:text-xl">
-          Practical pieces from people doing the work. No thought-leadership filler, no
-          AI-slop posts written to game search rankings — just things we've learned
-          shipping automations and agents into real businesses.
+          Practical pieces from people doing the work. No thought-leadership filler,
+          no AI-slop posts written to game search rankings. Just things we've
+          learned shipping automations and agents into real businesses.
         </p>
       </div>
     </div>
@@ -64,10 +64,10 @@ const upcoming = [
     <div class="mx-auto max-w-3xl rounded-3xl border border-halo-soft/15 bg-white/[0.03] p-8 text-center">
       <h2 class="text-2xl text-paper">Articles arriving shortly</h2>
       <p class="mt-3 text-pretty text-paper/70">
-        We'd rather publish three good pieces than thirty thin ones. Three are in the
-        works — listed below — and the first will land in the next few weeks. Subscribe
-        to the email list (lightweight, monthly, no nurture sequence) to be the first to
-        read them.
+        We'd rather publish three good pieces than thirty thin ones. Three are in
+        the works (listed below) and the first will land in the next few weeks.
+        Subscribe to the email list (lightweight, monthly, no nurture sequence) to
+        be the first to read them.
       </p>
       <a href="/contact" class="btn-secondary mt-6">Get notified by email</a>
     </div>
@@ -78,7 +78,7 @@ const upcoming = [
           class="reveal rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6"
           style={`transition-delay:${i * 70}ms`}
         >
-          <span class="eyebrow-mono text-halo-soft/80">In the works</span>
+          <span class="eyebrow-mono text-halo-soft/85">In the works</span>
           <h3 class="mt-4 text-lg text-paper text-balance">{p.title}</h3>
           <p class="mt-3 text-sm text-paper/70 text-pretty">{p.summary}</p>
         </li>
@@ -89,7 +89,7 @@ const upcoming = [
   <Section padding="xl">
     <CTACard
       title="Got a question we should write about?"
-      body="Email us a question you wish someone in this space had answered honestly — if it's good, we'll write it up and credit you (or not, if you'd rather)."
+      body="Email us a question you wish someone in this space had answered honestly. If it's good, we'll write it up and credit you (or not, if you'd rather)."
     />
   </Section>
 </BaseLayout>

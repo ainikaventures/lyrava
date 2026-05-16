@@ -22,7 +22,7 @@ const {
 
 const canonical = canonicalFor(path);
 const ogImageUrl = absoluteUrl(ogImage);
-const fullTitle = title.includes(SITE.name) ? title : `${title} — ${SITE.name}`;
+const fullTitle = title.includes(SITE.name) ? title : `${title} · ${SITE.name}`;
 
 // Default JSON-LD on every page (Organization + WebSite); page-specific schemas
 // are appended via the `jsonLd` prop.
@@ -56,7 +56,7 @@ const allSchemas = [organizationSchema(), websiteSchema(), ...jsonLd];
 {updatedAt && <meta property="article:modified_time" content={updatedAt} />}
 {author && <meta property="article:author" content={author} />}
 
-<!-- Twitter Card — uses the dedicated Twitter render of the brand mark -->
+<!-- Twitter Card . uses the dedicated Twitter render of the brand mark -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />

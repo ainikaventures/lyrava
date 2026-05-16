@@ -10,14 +10,14 @@ import CTACard from "@components/CTACard.astro";
 import { serviceSchema } from "@lib/seo";
 
 const slug = "marketing-sales-automation";
-const title = "Marketing & Sales Automation";
+const title = "Marketing and sales automation";
 const description =
-  "CRM build-outs, lead scoring, multi-channel sequences, and attribution that finally tells you which channel actually paid. We make pipeline plumbing that turns anonymous traffic into qualified meetings — without the spammy reputation that kills B2B deliverability.";
+  "CRM build-outs, lead scoring, multi-channel sequences and attribution that tells you which channel actually paid. Pipeline plumbing that turns anonymous traffic into qualified meetings, without the spammy reputation that kills B2B deliverability.";
 
 const seo = {
-  title: `Marketing & Sales Automation Consultancy — lyrava`,
+  title: "Marketing and sales automation consultancy · lyrava",
   description:
-    "HubSpot, Pipedrive, and GoHighLevel build-outs for UK and US teams. Lead scoring, multi-channel outbound, attribution, and CRM hygiene that finally pays back.",
+    "HubSpot, Pipedrive and GoHighLevel build-outs for UK and US teams. Lead scoring, multi-channel outbound, attribution, and CRM hygiene that finally pays back.",
   path: `/services/${slug}`,
   keywords: [
     "marketing automation consultancy",
@@ -34,34 +34,34 @@ const seo = {
 const breadcrumbs = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Marketing & Sales Automation", href: `/services/${slug}` },
+  { name: "Marketing and sales automation", href: `/services/${slug}` },
 ];
 
 const steps = [
   {
     title: "Audit the funnel you actually have",
-    body: "We trace ten recent deals — won and lost — through your CRM. Where leads got stuck. Where data went missing. Where reps reinvented sequences from scratch. The audit usually finds the next quarter's revenue hiding inside last quarter's CRM.",
+    body: "We trace ten recent deals (won and lost) through your CRM. Where leads got stuck. Where data went missing. Where reps reinvented sequences from scratch. The audit usually finds the next quarter's revenue hiding inside last quarter's CRM.",
   },
   {
-    title: "Rebuild the CRM as a system, not a database",
+    title: "Rebuild the CRM as a system",
     body: "Properties that match how you actually qualify. Lifecycle stages with crisp entry and exit criteria. Lead scoring that fires from real signals, not vibes. Routing rules that get the right rep to the right lead inside two minutes.",
   },
   {
     title: "Wire the sequences that compound",
-    body: "Inbound: a nurture that adapts to what the lead does, not a 5-email blast everyone gets. Outbound: multi-channel (email + LinkedIn + occasionally direct mail) with proper deliverability hygiene — domain warm-up, separate sending domains, reply detection that actually pauses sequences.",
+    body: "Inbound: a nurture that adapts to what the lead does, not the same five-email blast everyone gets. Outbound: multi-channel (email plus LinkedIn, occasionally direct mail) with proper deliverability hygiene. Domain warm-up, separate sending domains, reply detection that actually pauses sequences.",
   },
   {
     title: "Close the loop with attribution",
-    body: "Every closed-won deal traceable back to the channel, campaign, and content that started the conversation. Not perfect attribution — that's a fantasy — but enough to stop spending money on the channels that don't work.",
+    body: "Every closed-won deal traceable back to the channel, campaign and content that started the conversation. Not perfect attribution (that's a fantasy), but enough to stop spending money on the channels that don't work.",
   },
 ];
 
 const tools = [
   { name: "HubSpot", tag: "primary CRM" },
-  { name: "Pipedrive", tag: "lean / sales-led" },
+  { name: "Pipedrive", tag: "lean and sales-led" },
   { name: "GoHighLevel", tag: "agency / SMB" },
   { name: "Salesforce", tag: "enterprise" },
-  { name: "Apollo", tag: "data + outbound" },
+  { name: "Apollo", tag: "data and outbound" },
   { name: "Clay", tag: "enrichment" },
   { name: "Instantly / Smartlead", tag: "cold email infra" },
   { name: "LinkedIn Sales Nav", tag: "social outbound" },
@@ -73,74 +73,74 @@ const tools = [
 
 const cases = [
   {
-    metric: "1.1% → 4.3%",
+    metric: "1.1% to 4.3%",
     metricLabel: "Outbound reply rate",
     title: "Cold outbound rebuild for a US dev tools startup",
     context:
-      "A 15-person startup was running a single-domain Apollo sequence to 8,000 contacts a month with a 1.1% reply rate, deliverability collapsing, and a Sender Reputation that was tanking their main marketing domain.",
+      "A 15-person startup was running a single-domain Apollo sequence to 8,000 contacts a month. 1.1% reply rate, deliverability collapsing, sender reputation tanking the main marketing domain.",
     outcome:
-      "We rebuilt outbound on dedicated sending infrastructure (separate domains, warmed individually), cut volume by 70%, replaced the generic sequence with three tightly-segmented plays, and added enrichment via Clay. Reply rate climbed to 4.3% within six weeks; positive replies tripled.",
+      "We rebuilt outbound on dedicated sending infrastructure (separate domains, warmed individually), cut volume by 70%, replaced the generic sequence with three tightly-segmented plays, and added enrichment via Clay. Reply rate climbed to 4.3% within six weeks. Positive replies tripled.",
   },
   {
     metric: "+38%",
-    metricLabel: "MQL → SQL conversion",
+    metricLabel: "MQL to SQL conversion",
     title: "Lead scoring rebuild for a UK SaaS",
     context:
-      "Sales reps complained that 60% of marketing-qualified leads were unqualified — wasting hours per week on bad-fit conversations.",
+      "Sales reps complained that 60% of marketing-qualified leads were unqualified, wasting hours per week on bad-fit conversations.",
     outcome:
-      "A fresh scoring model combining firmographic fit (from enriched company data) with behavioural signals (pricing-page visits, doc engagement, repeat sessions). Routing rules now hold leads under threshold for nurture instead of pushing them to sales. MQL → SQL rate moved from 22% to 30%; sales stopped complaining.",
+      "A fresh scoring model combining firmographic fit (from enriched company data) with behavioural signals (pricing-page visits, doc engagement, repeat sessions). Routing rules now hold leads under threshold for nurture instead of pushing them to sales. MQL to SQL rate moved from 22% to 30%. Sales stopped complaining.",
   },
   {
-    metric: "Day 30 view of ROI",
-    metricLabel: "Per channel",
+    metric: "Day 30",
+    metricLabel: "View of ROI per channel",
     title: "Attribution stack for a UK marketing agency",
     context:
-      "The CMO knew the agency closed roughly £2M ARR last year — but couldn't tell which channel produced what, beyond \"LinkedIn felt good.\"",
+      "The CMO knew the agency closed roughly £2M ARR last year, but couldn't tell which channel produced what beyond 'LinkedIn felt good.'",
     outcome:
-      "Segment instrumentation across the site, multi-touch attribution via Dreamdata, with first-touch / last-touch / linear views in a single dashboard. Two months in, the agency cut spend on a paid channel that produced zero closed-won deals (despite producing the most MQLs) and reallocated to a channel that produced 40% of pipeline on 12% of spend.",
+      "Segment instrumentation across the site, multi-touch attribution via Dreamdata, with first-touch, last-touch and linear views in a single dashboard. Two months in, the agency cut spend on a paid channel that produced zero closed-won deals (despite producing the most MQLs) and reallocated to a channel that produced 40% of pipeline on 12% of spend.",
   },
 ];
 
 const faqs = [
   {
-    question: "HubSpot or Pipedrive — which should we use?",
+    question: "HubSpot or Pipedrive, which should we use?",
     answer:
-      "<strong>HubSpot</strong> is the right answer for most growing teams (10–250 employees) — the marketing/sales/service unification is genuinely useful, and the integration ecosystem is unmatched. <strong>Pipedrive</strong> wins for sales-led teams who want a lean, deal-focused CRM and don't need the marketing automation bundled in. <strong>GoHighLevel</strong> is great for agencies and SMB-focused businesses where you need a white-labelable platform. We have no reseller commission with any of them; the recommendation is based on your actual workflow, not our margin.",
+      "<strong>HubSpot</strong> is the right answer for most growing teams (10 to 250 employees). The marketing/sales/service unification is genuinely useful, and the integration ecosystem is unmatched. <strong>Pipedrive</strong> wins for sales-led teams who want a lean, deal-focused CRM and don't need the marketing automation bundled in. <strong>GoHighLevel</strong> is great for agencies and SMB-focused businesses where you need a white-labelable platform. We have no reseller commission with any of them. The recommendation is based on your actual workflow, not our margin.",
   },
   {
     question: "Is cold outreach legal in the UK and EU?",
     answer:
-      "Yes, with caveats. UK and EU GDPR allow B2B cold email under <em>legitimate interest</em> when the recipient has a clear professional reason to want your message and you give them an easy opt-out. The key is targeting (no scattershot to 50,000 contacts), relevance (the message has to be plausibly useful to them), and frictionless unsubscribe. We build the systems and the messaging to keep you on the right side of this — and we won't take engagements where the brief is to spam.",
+      "Yes, with caveats. UK and EU GDPR allow B2B cold email under <em>legitimate interest</em> when the recipient has a clear professional reason to want your message and you give them an easy opt-out. The key is targeting (no scattershot to 50,000 contacts), relevance (the message has to be plausibly useful to them) and frictionless unsubscribe. We build the systems and messaging to keep you on the right side of this, and we won't take engagements where the brief is to spam.",
   },
   {
-    question: "What about US CAN-SPAM, CCPA, and state laws?",
+    question: "What about US CAN-SPAM, CCPA and state laws?",
     answer:
-      "CAN-SPAM is straightforward — clear sender identity, accurate subject lines, a physical address, an unsubscribe mechanism that works within 10 days. We bake all of this into the email infrastructure by default. CCPA and the newer state laws (CPRA, CTDPA, etc.) mainly affect how you handle the data after collection — we'll wire your CRM and forms to honour deletion and opt-out requests.",
+      "CAN-SPAM is straightforward: clear sender identity, accurate subject lines, a physical address, and an unsubscribe mechanism that works within 10 days. We bake all of this into the email infrastructure by default. CCPA and the newer state laws (CPRA, CTDPA) mainly affect how you handle the data after collection. We'll wire your CRM and forms to honour deletion and opt-out requests.",
   },
   {
     question: "Do you write the email and LinkedIn copy too?",
     answer:
-      "Yes, when it's part of the engagement. We'd rather write the first version ourselves than hand a template to your team — most outbound fails on copy quality more than on infrastructure. After launch, we hand you the message frameworks and the sequences in your CRM so your team can iterate.",
+      "Yes, when it's part of the engagement. We'd rather write the first version ourselves than hand a template to your team. Most outbound fails on copy quality more than on infrastructure. After launch, we hand you the message frameworks and the sequences in your CRM so your team can iterate.",
   },
   {
     question: "We already have HubSpot. Do you migrate or work with what's there?",
     answer:
-      "Whichever makes more sense. Most existing HubSpot accounts have 80% of what they need and 20% of structural problems holding the rest back. We'll audit, clean up the data model, and rebuild the parts that need it — without breaking the parts that are working.",
+      "Whichever makes more sense. Most existing HubSpot accounts have 80% of what they need and 20% of structural problems holding the rest back. We'll audit, clean up the data model, and rebuild the parts that need it. Without breaking the parts that are working.",
   },
   {
     question: "What's the typical engagement size?",
     answer:
-      "A first build is usually £15k–£40k / $18k–$50k depending on stack complexity, data volume, and whether sequences and copy are in scope. Most clients then move to a fractional revops retainer (£3k–£8k / month) for ongoing optimisation.",
+      "A first build is usually £15k to £40k or $18k to $50k depending on stack complexity, data volume, and whether sequences and copy are in scope. Most clients then move to a fractional revops retainer (£3k to £8k a month) for ongoing optimisation.",
   },
 ];
 ---
 
 <BaseLayout {...seo}>
   <ServiceHero
-    eyebrow="Marketing & sales automation"
+    eyebrow="Marketing and sales automation"
     title="Pipeline plumbing that turns"
     accent="anonymous traffic into qualified meetings."
-    lede="Most B2B funnels leak in the same five places. We rebuild your CRM, scoring, sequences, and attribution so revenue is reproducible — not a story your CMO tells the board after the fact."
+    lede="Most B2B funnels leak in the same five places. We rebuild your CRM, scoring, sequences and attribution so revenue is reproducible. Not a story your CMO tells the board after the fact."
     breadcrumbs={breadcrumbs}
   />
 
@@ -156,20 +156,22 @@ const faqs = [
       <div class="lg:col-span-7 space-y-5 text-paper/75 text-pretty">
         <p>
           Most B2B funnels leak in the same way every time. Forms capture leads but
-          fields don't match how sales actually qualifies. Lead scoring is a vibes-based
-          number nobody trusts. Reps build their own sequences in Apollo or Outreach
-          because the CRM ones are stale. The marketing team can't tell which campaign
-          produced which deal, so budgets get set politically instead of mathematically.
+          fields don't match how sales actually qualifies. Lead scoring is a
+          vibes-based number nobody trusts. Reps build their own sequences in Apollo
+          or Outreach because the CRM ones are stale. The marketing team can't tell
+          which campaign produced which deal, so budgets get set politically instead
+          of mathematically.
         </p>
         <p>
-          And on the outbound side: a single sending domain is burned to the ground
-          inside three months because someone optimised for volume over relevance, taking
-          the main marketing domain's deliverability with it.
+          On the outbound side: a single sending domain is burned to the ground
+          inside three months because someone optimised for volume over relevance,
+          taking the main marketing domain's deliverability with it.
         </p>
         <p>
-          Fixing this isn't a tools problem. It's a systems problem. The good news: the
-          fix usually pays for itself within a quarter, because the pipeline you've
-          already produced is closing at a higher rate as soon as the plumbing works.
+          Fixing this isn't a tools problem. It's a systems problem. The good news:
+          the fix usually pays for itself within a quarter, because the pipeline
+          you've already produced is closing at a higher rate as soon as the
+          plumbing works.
         </p>
       </div>
     </div>
@@ -179,7 +181,7 @@ const faqs = [
     <Steps
       steps={steps}
       title="How we rebuild revenue ops"
-      blurb="Audit, restructure, sequence, attribute. Roughly 6–8 weeks for the first phase, then ongoing optimisation. The audit alone usually surfaces enough to pay for the project."
+      blurb="Audit, restructure, sequence, attribute. Roughly six to eight weeks for the first phase, then ongoing optimisation. The audit alone usually surfaces enough to pay for the project."
     />
   </Section>
 
@@ -187,7 +189,7 @@ const faqs = [
     <ToolGrid
       tools={tools}
       title="Tools we work in"
-      blurb="We're CRM-agnostic. The right answer depends on team size, sales motion, and existing investment — not what a vendor's account exec told you over lunch."
+      blurb="We're CRM-agnostic. The right answer depends on team size, sales motion and existing investment. Not what a vendor's account exec told you over lunch."
     />
   </Section>
 
@@ -202,7 +204,7 @@ const faqs = [
   <Section padding="xl">
     <CTACard
       title="Find your funnel's biggest leak in 30 minutes."
-      body="Book a call. Walk us through your last 10 deals — won, lost, stuck. We'll tell you on the call where the leak is and roughly what it would cost to fix."
+      body="Book a call. Walk us through your last 10 deals (won, lost, stuck). We'll tell you on the call where the leak is and roughly what it would cost to fix."
     />
   </Section>
 </BaseLayout>

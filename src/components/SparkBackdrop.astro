@@ -2,8 +2,7 @@
 import SparkMark from "./SparkMark.astro";
 
 /**
- * Hero backdrop using the official brand sparkle geometry. Decorative only —
- * brand R6 ("one glow, never two") is satisfied because the page mark itself
+ * Hero backdrop using the official brand sparkle geometry. Decorative only .  * brand R6 ("one glow, never two") is satisfied because the page mark itself
  * is rendered flat. The bloom layer is a Halo-coloured radial wash, not a
  * recoloured mark.
  */
@@ -15,7 +14,7 @@ const { subtle = false } = Astro.props;
 ---
 
 <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-  <!-- Warm Halo bloom at the top — atmosphere, not a mark -->
+  <!-- Warm Halo bloom at the top . atmosphere, not a mark -->
   <div
     class:list={[
       "absolute left-1/2 top-[-30%] h-[700px] w-[1100px] -translate-x-1/2 rounded-full bg-halo-radial blur-2xl",
@@ -32,7 +31,7 @@ const { subtle = false } = Astro.props;
     style="background: radial-gradient(circle, rgba(255,241,201,0.10) 0%, transparent 70%);"
   ></div>
 
-  <!-- Floating brand-geometry sparks — currentColor + drop shadow for soft glow -->
+  <!-- Floating brand-geometry sparks . currentColor + drop shadow for soft glow -->
   <div
     class="absolute left-[7%] top-[16%] animate-twinkle text-paper/40"
     style="filter: drop-shadow(0 0 14px rgba(255,241,201,0.35))"

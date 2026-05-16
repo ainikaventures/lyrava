@@ -10,14 +10,14 @@ import CTACard from "@components/CTACard.astro";
 import { serviceSchema } from "@lib/seo";
 
 const slug = "business-process-automation";
-const title = "Business Process & Workflow Automation";
+const title = "Business process and workflow automation";
 const description =
-  "Stop paying senior people to copy-paste between SaaS tools. We design and build the Zapier, Make, n8n, and Power Automate workflows that take invoices, onboarding, and approvals off your team's plate — with proper error handling, logging, and runbooks.";
+  "We design and build the Zapier, Make, n8n and Power Automate workflows that take invoices, onboarding, and approvals off your team's plate. Proper error handling, monitoring, and runbooks included.";
 
 const seo = {
-  title: `${title} — lyrava`,
+  title: `${title} for UK and US teams · lyrava`,
   description:
-    "UK and US business process automation agency. We build Zapier, Make, n8n, and Power Automate workflows that compound — invoice processing, onboarding, approval routing, document workflows.",
+    "UK and US business process automation agency. We build Zapier, Make, n8n and Power Automate workflows for invoice processing, onboarding, approval routing and document workflows.",
   path: `/services/${slug}`,
   keywords: [
     "business process automation agency",
@@ -33,41 +33,41 @@ const seo = {
 const breadcrumbs = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Business Process Automation", href: `/services/${slug}` },
+  { name: "Business process automation", href: `/services/${slug}` },
 ];
 
 const steps = [
   {
-    title: "Audit before automating",
-    body: "We map the process end-to-end across people, tools, and inputs. Half the wins come from killing steps, not connecting them — we'll show you which ones to delete before we wire anything up.",
+    title: "Map the process before changing it",
+    body: "We sit with the team that runs the work and write down what actually happens, step by step. Often the win is removing steps, not connecting them. We'll flag those before we touch a tool.",
   },
   {
-    title: "Pick the right tier of tool",
-    body: "Zapier when speed matters and the workflow is short. Make for branching logic and bigger data. n8n (self-hosted) when you need control, scale, or compliance. We'll tell you which — and why — before we build.",
+    title: "Pick the right tier of tooling",
+    body: "Zapier when the workflow is short and you want it shipped this week. Make when there's branching logic or higher volume. n8n (self-hosted) when you need full control over your data, or your security team needs it to live inside your VPC.",
   },
   {
-    title: "Build with real error handling",
-    body: "Every workflow ships with retries, idempotency keys where it matters, alerting to Slack or email when something fails, and a runbook your team can follow without us.",
+    title: "Build for the day it breaks",
+    body: "Every workflow ships with retries, idempotency keys where they matter, alerts to Slack or email when something fails, and a written runbook your team can use without calling us.",
   },
   {
-    title: "Hand it over, properly",
-    body: "Credentials in your name. Documentation in your wiki. A 30-minute Loom walking your team through what to do when something breaks. You can fire us tomorrow and nothing stops working.",
+    title: "Hand it over properly",
+    body: "All credentials in your name. Documentation in your wiki. A short Loom showing your team how to fix the common failures. End the engagement and nothing stops working.",
   },
 ];
 
 const tools = [
-  { name: "Zapier", tag: "speed & breadth" },
+  { name: "Zapier", tag: "speed and breadth" },
   { name: "Make", tag: "branching logic" },
   { name: "n8n", tag: "self-hosted" },
   { name: "Power Automate", tag: "Microsoft stack" },
   { name: "Airtable", tag: "ops database" },
-  { name: "Notion", tag: "docs + workflows" },
+  { name: "Notion", tag: "docs and workflows" },
   { name: "Google Workspace", tag: "Apps Script" },
-  { name: "Slack", tag: "approvals + alerts" },
+  { name: "Slack", tag: "approvals and alerts" },
   { name: "Stripe", tag: "billing flows" },
   { name: "Xero / QuickBooks", tag: "accounting" },
   { name: "DocuSign", tag: "signature workflows" },
-  { name: "Custom code", tag: "when it earns it" },
+  { name: "Custom code", tag: "where it earns it" },
 ];
 
 const cases = [
@@ -76,60 +76,60 @@ const cases = [
     metricLabel: "Saved per week",
     title: "Invoice processing for a UK accountancy",
     context:
-      "A 22-person practice was spending 12 hours per week downloading client invoices, renaming files, and entering them into Xero by hand.",
+      "A 22-person practice was spending 12 hours a week downloading client invoices, renaming files, and entering them into Xero by hand.",
     outcome:
-      "We built a Make scenario that pulls invoices from inboxes and shared drives, OCRs them, matches the supplier, and pushes draft bills into Xero with the right tax codes. The bookkeeper now spends 30 minutes per week reviewing exceptions.",
+      "We built a Make scenario that pulls invoices from inboxes and shared drives, OCRs them, matches the supplier, and pushes draft bills into Xero with the right tax codes. The bookkeeper now spends about 30 minutes a week reviewing exceptions.",
   },
   {
-    metric: "3 days → same day",
+    metric: "3 days to same day",
     metricLabel: "Onboarding cycle time",
     title: "Client onboarding for a US marketing agency",
     context:
-      "A 40-person agency was losing the first three days of every engagement to a sequence of forms, contracts, intro emails, Slack invites, and folder creation handled by an over-stretched ops manager.",
+      "A 40-person agency was losing the first three days of every engagement to forms, contracts, intro emails, Slack invites, and folder creation handled by an over-stretched ops manager.",
     outcome:
-      "A single intake form in HubSpot now triggers a Zapier sequence that fires the contract via PandaDoc, provisions the Slack channel, creates the Google Drive folder structure, schedules the kickoff in Calendly, and posts the welcome message — all before the new client refreshes their email.",
+      "A single intake form in HubSpot now triggers a Zapier sequence that fires the contract through PandaDoc, provisions the Slack channel, creates the Google Drive folder structure, schedules the kickoff in Calendly, and posts the welcome message. All of it before the new client refreshes their email.",
   },
   {
     metric: "~$80k/yr",
     metricLabel: "Operational cost saved",
     title: "Approval routing for a 200-person SaaS",
     context:
-      "Procurement requests bounced between three approvers in email, with no audit trail, no SLA, and a heroic ops lead chasing approvals on Slack.",
+      "Procurement requests bounced between three approvers in email. No audit trail, no SLA, and an overworked ops lead chasing approvals on Slack.",
     outcome:
-      "We replaced the email chain with an n8n workflow on top of an Airtable approvals table, with role-based routing, automatic reminders after 48 hours, and a single dashboard the CFO actually checks. Approval times dropped from a median of 9 days to 1.5 days.",
+      "We replaced the email chain with an n8n workflow on top of an Airtable approvals table. Role-based routing, automatic reminders after 48 hours, and a single dashboard the CFO actually checks. Median approval times dropped from 9 days to 1.5.",
   },
 ];
 
 const faqs = [
   {
-    question: "What's the difference between Zapier, Make, and n8n?",
+    question: "What's the difference between Zapier, Make and n8n?",
     answer:
-      "<strong>Zapier</strong> is the fastest to ship and has the widest catalogue of integrations — best when the workflow is short and you'd rather not run infrastructure. <strong>Make</strong> (formerly Integromat) gives you visual branching, error routes, and much cheaper pricing at higher volumes — best for anything with conditional logic. <strong>n8n</strong> is self-hostable and open source — best when you need full control over your data, want to avoid per-task pricing, or have compliance requirements that rule out third-party platforms. We'll recommend whichever is right for your stack and budget; we have no financial relationship with any of them.",
+      "<strong>Zapier</strong> is the fastest to ship and has the widest catalogue of integrations. Best when the workflow is short and you'd rather not run any infrastructure. <strong>Make</strong> (formerly Integromat) gives you visual branching, error routes, and much cheaper pricing at higher volumes. Best for anything with conditional logic. <strong>n8n</strong> is open source and self-hostable. Best when you need full control over your data, want to avoid per-task pricing, or have compliance requirements that rule out third-party platforms. We'll recommend whichever fits your stack and budget. We have no financial relationship with any of them.",
   },
   {
     question: "Will this break when our SaaS apps update their APIs?",
     answer:
-      "Sometimes — APIs do change. That's why every workflow we ship includes monitoring, automatic failure alerts, and a documented runbook. If you're on a retainer, we cover the fix. If you're not, you can fix most issues yourself in under 30 minutes using the runbook, or send us a one-off ticket.",
+      "Sometimes. APIs do change. Every workflow we ship includes monitoring, automatic failure alerts, and a documented runbook. If you're on a retainer, we cover the fix. If you're not, you can usually fix common issues yourself in under 30 minutes using the runbook, or send us a one-off ticket.",
   },
   {
     question: "Who owns the credentials and accounts?",
     answer:
-      "You do. Always. We connect to <em>your</em> Zapier / Make / n8n account using <em>your</em> SaaS credentials. When the project ends, we hand back full admin access and remove ours. No vendor lock-in by accident.",
+      "You do. Always. We connect to <em>your</em> Zapier, Make or n8n account using <em>your</em> SaaS credentials. When the project ends we hand back full admin access and remove ours. No vendor lock-in by accident.",
   },
   {
     question: "How do you handle errors and edge cases?",
     answer:
-      "Every workflow has error handling baked in: retries with exponential backoff for transient failures, dead-letter handling for malformed inputs, idempotency keys on operations that shouldn't run twice, and Slack/email alerts when something needs human attention. We also write a one-page \"what to do when X breaks\" runbook for each workflow.",
+      "Every workflow has error handling baked in: retries with exponential backoff for transient failures, dead-letter handling for malformed inputs, idempotency keys on operations that shouldn't run twice, and Slack or email alerts when something needs human attention. We also write a one-page runbook for each workflow.",
   },
   {
     question: "Do we need engineering involvement on our side?",
     answer:
-      "Usually no — that's the whole point. Most of the tools we use are no-code or low-code. Where custom code <em>is</em> needed (an API without an off-the-shelf connector, complex data transformation), we write and host it ourselves. Your engineers are looped in for credentials and for the security review, and that's it.",
+      "Usually no, that's the whole point. Most of the tools we use are no-code or low-code. Where custom code is needed (an API without an off-the-shelf connector, or complex data transformation), we write and host it ourselves. Your engineers are looped in for credentials and the security review, and that's it.",
   },
   {
     question: "How long does a typical first build take?",
     answer:
-      "From signed contract to live workflow: usually two weeks. The first half is the audit and design (we don't build anything until you've signed off the process map and the success metric). The second half is build, test, document, and hand over.",
+      "From signed contract to live workflow, usually two weeks. The first half is the audit and design (we don't build anything until you've signed off the process map and the success metric). The second half is build, test, document and hand over.",
   },
 ];
 ---
@@ -139,7 +139,7 @@ const faqs = [
     eyebrow="Process automation"
     title="Stop paying senior people"
     accent="to copy-paste."
-    lede="The average mid-sized team loses 15–20% of operational hours to work that already lives inside the SaaS tools they're paying for — it just isn't connected. We connect it."
+    lede="The average mid-sized team loses 15 to 20 percent of operational hours to work that already lives inside the SaaS tools they're paying for. It just isn't connected. We connect it."
     breadcrumbs={breadcrumbs}
   />
 
@@ -148,7 +148,7 @@ const faqs = [
       <div class="lg:col-span-5">
         <span class="eyebrow">The problem</span>
         <h2 class="mt-4 text-display-lg text-balance">
-          Your tools work. The
+          Your tools work fine. The
           <span class="text-halo-soft">handoffs between them</span>
           don't.
         </h2>
@@ -159,18 +159,18 @@ const faqs = [
           tool is fine. The project management tool is fine. But invoices arrive in
           email, get downloaded by hand, renamed, uploaded somewhere, then keyed into
           accounting. New clients fill out a form, then someone manually creates the
-          Slack channel, the Drive folder, the contract, and the kickoff invite.
+          Slack channel, the Drive folder, the contract and the kickoff invite.
           Approvals happen in DMs that no one can audit.
         </p>
         <p>
-          Each of these handoffs costs five minutes. Multiply by ten people, ten
-          times a day, fifty weeks a year, and you're paying for a full-time job
-          you didn't realise you'd hired. Worse, the work is invisible — until
-          someone leaves and the institutional knowledge leaves with them.
+          Each of those handoffs costs five minutes. Multiply by ten people, ten
+          times a day, fifty weeks a year, and you're paying for a full-time job you
+          didn't realise you'd hired. The work is invisible until someone leaves and
+          the institutional knowledge leaves with them.
         </p>
         <p>
-          Process automation isn't about replacing people. It's about ending the
-          conditions where senior people quietly drown in clerical work.
+          Process automation isn't about replacing people. It's about giving them
+          their afternoons back.
         </p>
       </div>
     </div>
@@ -180,7 +180,7 @@ const faqs = [
     <Steps
       steps={steps}
       title="How we solve it"
-      blurb="Four phases. Two weeks for the first workflow in production. Then we keep going if it's working — and stop if it's not."
+      blurb="Four phases, two weeks for the first workflow in production. We keep going if it's working and stop if it isn't."
     />
   </Section>
 
@@ -188,7 +188,7 @@ const faqs = [
     <ToolGrid
       tools={tools}
       title="Tools we work in"
-      blurb="We're tool-agnostic. We pick what fits your team's existing stack, your data sensitivity, and your budget — and we'll happily push back on a brief that demands a specific platform when something else is the better fit."
+      blurb="We're tool-agnostic. We pick what fits your existing stack, your data sensitivity and your budget. We'll happily push back if a brief specifies a tool that isn't the right fit."
     />
   </Section>
 
@@ -203,7 +203,7 @@ const faqs = [
   <Section padding="xl">
     <CTACard
       title="Find out what your team's manual hours are actually costing."
-      body="A two-day paid audit gives you a process map, a prioritised list of automations ranked by ROI, and a fixed quote for the build. £1,500 / $2,000. Roll the audit fee into the build if you decide to proceed."
+      body="A two-day paid audit gives you a process map, a list of automations ranked by ROI, and a fixed quote for the build. £1,500 / $2,000. Roll the audit fee into the build if you decide to proceed."
     />
   </Section>
 </BaseLayout>

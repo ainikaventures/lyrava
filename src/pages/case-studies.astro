@@ -6,9 +6,9 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import CTACard from "@components/CTACard.astro";
 
 const seo = {
-  title: "Case Studies — Automation Engagements That Paid Back",
+  title: "Case studies: automation engagements that paid back · lyrava",
   description:
-    "Selected automation engagements: process automations, AI agents, and revenue-ops builds for UK and US teams. Anonymised where the client prefers, full reference detail on request.",
+    "Selected automation engagements: process automations, AI agents and revenue-ops builds for UK and US teams. Anonymised where the client prefers, full reference detail on request.",
   path: "/case-studies",
 };
 
@@ -17,8 +17,8 @@ const breadcrumbs = [
   { name: "Case studies", href: "/case-studies" },
 ];
 
-// Placeholder case studies — clearly marked. Replace with real engagements
-// (with the client's permission) before launch.
+// Placeholder case studies. Replace with real engagements (with client
+// permission) before publishing.
 const studies = [
   {
     sector: "UK fintech · 90 employees",
@@ -26,16 +26,16 @@ const studies = [
     metric: "67%",
     metricLabel: "Tier-1 deflection",
     summary:
-      "A Claude-powered support agent grounded in the help centre and policy docs, with hard escalation rules around money movement. Two months in: 67% deflection at 4.6/5 satisfaction. Sample case study — full reference engagement available on request.",
+      "A Claude-powered support agent grounded in the help centre and policy docs, with hard escalation rules around money movement. Two months in: 67% deflection at 4.6 out of 5 satisfaction. Sample case study, full reference engagement available on request.",
     tag: "AI agents",
   },
   {
     sector: "US marketing agency · 40 employees",
-    title: "Onboarding cycle time: 3 days → same day",
-    metric: "3d → same-day",
+    title: "Onboarding cycle time: 3 days to same day",
+    metric: "3d to same-day",
     metricLabel: "Onboarding time",
     summary:
-      "A single intake form in HubSpot now triggers a Zapier sequence that fires the contract, provisions Slack, creates the Drive folder, schedules the kickoff, and posts the welcome message — all before the new client refreshes their email.",
+      "A single intake form in HubSpot now triggers a Zapier sequence that fires the contract, provisions Slack, creates the Drive folder, schedules the kickoff, and posts the welcome message. All before the new client refreshes their email.",
     tag: "Process automation",
   },
   {
@@ -44,7 +44,7 @@ const studies = [
     metric: "5,200",
     metricLabel: "SKUs tracked daily",
     summary:
-      "A Playwright pipeline scrapes 12 competitor sites at off-peak hours and surfaces a Looker dashboard of price gaps, undercutting alerts, and stock-out opportunities. The pricing analyst now spends 30 min/day acting on the data.",
+      "A Playwright pipeline scrapes 12 competitor sites at off-peak hours and surfaces a Looker dashboard of price gaps, undercutting alerts, and stock-out opportunities. The pricing analyst now spends 30 minutes a day acting on the data.",
     tag: "Data pipelines",
   },
 ];
@@ -66,12 +66,13 @@ const studies = [
           looks like in production.
         </h1>
         <p class="reveal mt-6 text-pretty text-lg text-paper/75 md:text-xl">
-          A handful of representative engagements, anonymised where the client prefers
-          discretion. Full reference detail (and intros to the people who ran the project
-          on the client side) available when you're seriously evaluating us.
+          A handful of representative engagements, anonymised where the client
+          prefers discretion. Full reference detail (and intros to the people who
+          ran the project on the client side) available when you're seriously
+          evaluating us.
         </p>
         <p class="reveal mt-4 eyebrow-mono text-paper/45">
-          Showcase pieces — replace with real, named studies as relationships allow
+          Showcase pieces. We'll replace these with real, named studies as relationships allow.
         </p>
       </div>
     </div>
@@ -82,7 +83,7 @@ const studies = [
       {studies.map((s, i) => (
         <li class="reveal" style={`transition-delay:${i * 70}ms`}>
           <article class="card flex h-full flex-col">
-            <span class="eyebrow-mono text-halo-soft/80">{s.tag}</span>
+            <span class="eyebrow-mono text-halo-soft/85">{s.tag}</span>
             <div class="mt-6 font-display text-4xl text-paper">
               <span class="gradient-text-glow">{s.metric}</span>
             </div>
@@ -100,9 +101,10 @@ const studies = [
     <div class="mx-auto max-w-2xl rounded-2xl border border-white/[0.07] bg-white/[0.02] p-8 text-center">
       <h2 class="text-2xl text-paper">Want a real reference?</h2>
       <p class="mt-3 text-pretty text-paper/70">
-        Most of our work happens under NDA. When you're at the point of seriously evaluating us,
-        we'll connect you with two or three clients who'll talk through what we built, how it
-        went, and what they'd change — directly, without us in the room.
+        Most of our work happens under NDA. When you're at the point of seriously
+        evaluating us, we'll connect you with two or three clients who'll talk
+        through what we built, how it went, and what they'd change. Directly,
+        without us in the room.
       </p>
       <a href="/contact" class="btn-primary mt-6">Ask for references</a>
     </div>

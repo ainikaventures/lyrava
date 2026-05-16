@@ -6,9 +6,9 @@ import SparkMark from "@components/SparkMark.astro";
 import { SERVICES, SITE } from "@lib/site";
 
 const seo = {
-  title: "lyrava — Automation, AI Agents & Workflow Consultancy (UK & USA)",
+  title: "lyrava: automation, AI agents and workflow consultancy for UK and US teams",
   description:
-    "lyrava is a business process automation agency helping UK and US teams ship Zapier, Make, n8n, and AI agent builds that actually save hours — not just dashboards.",
+    "lyrava is an automation and AI agency working with teams in the UK and US. Zapier, Make, n8n, AI agents, CRM and data pipelines. Delivered from India, governed in the UK.",
   path: "/",
   keywords: [
     "business process automation agency",
@@ -31,33 +31,33 @@ const metrics = [
 
 const principles = [
   {
-    title: "Audit before automating",
-    body: "We map the process end-to-end before touching a tool. Half the wins come from killing steps, not connecting them.",
+    title: "Map the work first",
+    body: "We sit with your team for a day or two and write down what actually happens. Half the time, the answer isn't more automation. It's removing steps that shouldn't be there in the first place.",
   },
   {
-    title: "Boring tech where it counts",
-    body: "Zapier and Make for speed. n8n and code for scale. AI only where it earns its keep — not because it's trendy.",
+    title: "Use the right tool for the job",
+    body: "Zapier when you need to ship this week. Make when there's branching logic. n8n or custom code when you need control or scale. We pick based on your stack and budget, not what's trendy.",
   },
   {
-    title: "Owned by you, not us",
-    body: "Every build comes with a runbook, observability, and the credentials in your name. No vendor lock-in by accident.",
+    title: "You own everything we build",
+    body: "Credentials in your name. Documentation in your wiki. A short Loom showing your team how to fix things if they break. End the relationship tomorrow and nothing stops working.",
   },
   {
-    title: "Measured in hours saved",
-    body: "We agree the metric upfront and report against it monthly. If a workflow isn't paying back, we rebuild or retire it.",
+    title: "Hours saved is the metric",
+    body: "We agree the number upfront and report against it every month. If something we built isn't paying back, we rebuild it or shut it down. We won't keep billing for work that doesn't earn.",
   },
 ];
 ---
 
 <BaseLayout {...seo}>
-  <!-- ============================================================ HERO -->
+  <!-- HERO ============================================================ -->
   <section class="relative isolate overflow-hidden">
     <SparkBackdrop />
     <div class="container-wide pt-20 pb-24 md:pt-28 md:pb-32 lg:pt-36 lg:pb-40">
       <div class="mx-auto max-w-3xl text-center">
         <span class="eyebrow reveal">
           <span class="h-1.5 w-1.5 rounded-full bg-halo shadow-[0_0_8px_rgba(245,211,138,0.6)]"></span>
-          Automation agency · UK &amp; USA
+          Automation agency · UK and US
         </span>
 
         <h1 class="reveal mt-6 text-display-2xl text-balance text-paper">
@@ -67,9 +67,9 @@ const principles = [
         </h1>
 
         <p class="reveal mt-7 text-pretty text-lg text-paper/75 md:text-xl">
-          lyrava designs and ships the workflows, AI agents, and revenue-ops plumbing
-          that turn manual hours into compounding leverage — for ambitious teams in
-          London, New York, and everywhere in between.
+          We design and build the workflows, AI agents and CRM plumbing that take
+          repetitive work off your team's plate. Small projects in two weeks, bigger
+          ones in a quarter. Delivered from India, governed in the UK.
         </p>
 
         <div class="reveal mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -89,13 +89,11 @@ const principles = [
               <path d="M5 12h14M13 5l7 7-7 7" />
             </svg>
           </a>
-          <a href="/services" class="btn-secondary">
-            See what we build
-          </a>
+          <a href="/services" class="btn-secondary">See what we build</a>
         </div>
 
         <p class="reveal mt-6 eyebrow-mono text-paper/45">
-          Free 30-minute scoping call · No commitment
+          Free 30-minute call · No commitment
         </p>
       </div>
 
@@ -103,9 +101,7 @@ const principles = [
       <dl class="reveal mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-6">
         {metrics.map((m) => (
           <div class="flex flex-col items-center text-center">
-            <dt class="order-2 mt-2 eyebrow-mono text-paper/55">
-              {m.label}
-            </dt>
+            <dt class="order-2 mt-2 eyebrow-mono text-paper/55">{m.label}</dt>
             <dd class="order-1 font-display text-4xl text-halo-soft md:text-5xl">
               {m.value}
             </dd>
@@ -117,17 +113,17 @@ const principles = [
 
   <div class="divider-line"></div>
 
-  <!-- ============================================================ SERVICES -->
+  <!-- SERVICES ======================================================== -->
   <Section id="services" padding="lg">
     <div class="mx-auto max-w-2xl text-center">
       <span class="eyebrow reveal">What we do</span>
       <h2 class="reveal mt-5 text-display-lg text-balance">
-        Four pillars. One outcome:
-        <span class="text-halo-soft">fewer manual hours.</span>
+        Four practices.
+        <span class="text-halo-soft">One outcome.</span>
       </h2>
       <p class="reveal mx-auto mt-5 max-w-prose text-pretty text-paper/70">
-        We focus where automation has the highest leverage — and we say no to the rest.
-        Pick the pillar that's costing you the most time today; we'll start there.
+        Pick the area that's costing your team the most time today. We'll start there
+        and prove the value before suggesting anything else.
       </p>
     </div>
 
@@ -142,9 +138,7 @@ const principles = [
               >
                 <SparkMark size={18} />
               </div>
-              <span class="eyebrow-mono text-paper/40">
-                0{i + 1}
-              </span>
+              <span class="eyebrow-mono text-paper/40">0{i + 1}</span>
             </div>
 
             <h3 class="mt-6 text-2xl text-balance text-paper">{s.title}</h3>
@@ -159,7 +153,7 @@ const principles = [
             </div>
 
             <span class="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-halo-soft transition-transform group-hover:translate-x-1">
-              Explore service
+              Read more
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
@@ -172,22 +166,22 @@ const principles = [
 
   <div class="divider-line"></div>
 
-  <!-- ============================================================ APPROACH -->
+  <!-- APPROACH ======================================================== -->
   <Section id="approach" padding="lg">
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">
         <span class="eyebrow reveal">How we work</span>
         <h2 class="reveal mt-5 text-display-lg text-balance">
-          We're not another
-          <span class="text-halo-soft">"AI transformation"</span> deck.
+          The way we actually
+          <span class="text-halo-soft">run a project.</span>
         </h2>
         <p class="reveal mt-5 text-pretty text-paper/70">
-          lyrava is small, opinionated, and senior. You work with the people doing the
-          building — no account managers, no offshore handoffs, no PowerPoint inflation.
-          We measure ourselves on hours returned to your team, not slides delivered.
+          A small senior team. You speak to the people who do the building. No account
+          managers, no PowerPoint, no "AI strategy" decks. We get a useful workflow
+          into production fast and iterate from there.
         </p>
         <a href="/about" class="reveal mt-8 inline-flex items-center gap-2 text-sm font-medium text-halo-soft hover:underline underline-offset-4">
-          More about how we operate
+          More about how we work
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M5 12h14M13 5l7 7-7 7" />
           </svg>
@@ -215,12 +209,12 @@ const principles = [
 
   <div class="divider-line"></div>
 
-  <!-- ============================================================ PROCESS -->
+  <!-- PROCESS ========================================================= -->
   <Section id="process" padding="lg">
     <div class="mx-auto max-w-2xl text-center">
       <span class="eyebrow reveal">The engagement</span>
       <h2 class="reveal mt-5 text-display-lg text-balance">
-        From scoping call to shipped workflow in
+        From first call to live workflow in
         <span class="text-halo-soft">weeks, not quarters.</span>
       </h2>
     </div>
@@ -230,17 +224,17 @@ const principles = [
         {
           step: "Discover",
           time: "Week 1",
-          body: "30-minute call, then a paid two-day audit. You leave with a process map, a prioritised opportunity list, and a fixed quote.",
+          body: "A 30-minute call, then a short paid audit. You leave with a process map, an opportunity list ranked by ROI, and a fixed price for the build.",
         },
         {
           step: "Build",
-          time: "Weeks 2–3",
-          body: "We ship the first automation in production. You see live runs, error handling, and a runbook before we ever invoice for build time.",
+          time: "Weeks 2 to 3",
+          body: "We get the first automation into production. You see live runs, error handling and a runbook before we ever invoice for build time.",
         },
         {
-          step: "Compound",
+          step: "Run",
           time: "Ongoing",
-          body: "Optional retainer to monitor, extend, and absorb the next wave. Pause or cancel any month — you keep everything.",
+          body: "An optional retainer to monitor, extend and absorb the next round of work. Pause or cancel any month. You keep everything.",
         },
       ].map((p, i) => (
         <li class="reveal card" style={`transition-delay:${i * 80}ms`}>
@@ -255,25 +249,24 @@ const principles = [
     </ol>
   </Section>
 
-  <!-- ============================================================ CTA -->
+  <!-- CTA ============================================================= -->
   <Section padding="xl">
-    <div class="reveal relative overflow-hidden rounded-3xl border border-halo-soft/15 bg-gradient-to-br from-nocturne-lift via-ink to-nocturne-deep p-10 md:p-16">
+    <div class="reveal relative overflow-hidden rounded-3xl border border-halo-soft/15 bg-gradient-to-br from-nocturne-lift via-nocturne to-nocturne-deep p-10 md:p-16">
       <div aria-hidden="true" class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-halo-soft/[0.08] blur-3xl"></div>
       <div aria-hidden="true" class="absolute -bottom-24 -left-12 h-64 w-64 rounded-full bg-halo/[0.08] blur-3xl"></div>
 
       <div class="relative mx-auto max-w-2xl text-center">
         <h2 class="text-display-lg text-balance">
-          Ready to see where your team is bleeding hours?
+          Want to know where your team's hours are actually going?
         </h2>
         <p class="mt-5 text-pretty text-paper/75">
-          Book a free 30-minute call. We'll review one process you'd love to automate
-          and tell you — honestly — whether it's worth doing, what it would cost, and what we'd build.
+          Book a 30-minute call. Walk us through one process you'd like to automate
+          and we'll tell you whether it's worth doing, what we'd build, and roughly
+          what it would cost.
         </p>
         <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="/contact" class="btn-primary">Book a discovery call</a>
-          <a href={`mailto:${SITE.email}`} class="btn-secondary">
-            Or email us directly
-          </a>
+          <a href={`mailto:${SITE.email}`} class="btn-secondary">Or email us</a>
         </div>
       </div>
     </div>

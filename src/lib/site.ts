@@ -1,25 +1,23 @@
 /**
  * Single source of truth for site-wide config.
- * Update brand details, contact info, and nav here — every page reads from this file.
+ * Update brand details, contact info, and nav here. Every page reads from this file.
  *
- * Brand R1: the brand name is "lyrava" — always lowercase. Never `Lyrava`.
+ * Brand R1: the brand name is "lyrava" (lowercase). Never `Lyrava`.
  */
 
 export const SITE = {
   // Brand-correct (lowercase). Used as text content and as schema.org name.
   name: "lyrava",
-  // Capitalized form, only for use at the START of a sentence in JSON-LD or
-  // SEO copy where leading-lowercase would read as a typo to a search bot.
-  // Avoid in user-facing copy.
+  // Capitalized form, only for legal/contractual references like the footer.
   legalName: "Lyrava Ltd",
   tagline: "Data, automation and engineering for teams that want to move faster.",
   description:
-    "lyrava is an automation and AI agency for teams in the UK and US. We design and build business process automation, AI agents, marketing & sales workflows, and data pipelines — delivered from India, governed in the UK.",
+    "lyrava is an automation and AI agency working with teams in the UK and US. We build process automations, AI agents, marketing and sales workflows, and data pipelines. Delivered from India, governed in the UK.",
   url: "https://lyrava.com",
   defaultLocale: "en",
   locales: ["en-GB", "en-US"] as const,
   email: "info@lyrava.com",
-  // TODO: set a real registered office before publishing LocalBusiness schema.
+  // Set a registered office before publishing LocalBusiness schema.
   address: null as null | {
     streetAddress: string;
     addressLocality: string;
@@ -32,11 +30,11 @@ export const SITE = {
     twitter: "https://twitter.com/lyrava",
     github: "https://github.com/ainikaventures/lyrava",
   },
-  // SearchConsole, GA4, Clarity — set when ready (left blank → snippets stay disabled)
+  // Set when ready. Snippets stay disabled while these are blank.
   analytics: {
-    ga4MeasurementId: "" as string, // e.g. "G-XXXXXXXXXX"
-    clarityProjectId: "" as string, // e.g. "abcd1234"
-    googleSiteVerification: "" as string, // e.g. "abc...verification-token"
+    ga4MeasurementId: "" as string,
+    clarityProjectId: "" as string,
+    googleSiteVerification: "" as string,
   },
 };
 
@@ -53,34 +51,34 @@ export const PRIMARY_NAV: NavItem[] = [
 export const SERVICES = [
   {
     slug: "business-process-automation",
-    title: "Business Process & Workflow Automation",
+    title: "Business process and workflow automation",
     short: "Process automation",
     blurb:
-      "Stitch your tools together so invoices, onboarding, approvals, and reporting run without anyone copy-pasting at 11pm.",
+      "We connect the tools you already pay for so invoices, onboarding, approvals and reporting run without anyone copy-pasting at 11pm.",
     keywords: ["Zapier", "Make", "n8n", "Power Automate"],
   },
   {
     slug: "ai-agents-chatbots",
-    title: "AI Agents & Chatbots",
+    title: "AI agents and chatbots",
     short: "AI agents",
     blurb:
-      "Custom GPT-4 and Claude agents that answer customer questions, triage tickets, and surface knowledge from your documents.",
+      "GPT-4 and Claude agents that answer customer questions, triage tickets, and surface what your team needs from documents nobody reads.",
     keywords: ["OpenAI", "Anthropic", "LangChain", "RAG"],
   },
   {
     slug: "marketing-sales-automation",
-    title: "Marketing & Sales Automation",
-    short: "Marketing & sales",
+    title: "Marketing and sales automation",
+    short: "Marketing and sales",
     blurb:
-      "CRM build-outs, lead scoring, multi-channel sequences, and attribution that finally tells you which channel actually paid.",
+      "CRM build-outs, lead scoring, multi-channel sequences, and attribution that tells you which channel actually paid.",
     keywords: ["HubSpot", "Pipedrive", "GoHighLevel", "Apollo"],
   },
   {
     slug: "web-data-scraping",
-    title: "Web & Data Scraping",
+    title: "Web and data scraping",
     short: "Data pipelines",
     blurb:
-      "Compliant scraping for price monitoring, lead lists, and market research. Robots.txt-respecting, rate-limited, audit-trailed.",
+      "Compliant scraping for price monitoring, lead lists, and market research. Respecting robots.txt, rate-limited, with audit trails.",
     keywords: ["Playwright", "Bright Data", "Apify", "Pandas"],
   },
 ] as const;

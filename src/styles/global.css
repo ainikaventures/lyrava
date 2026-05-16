@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────────
-   Self-hosted fonts — no Google CDN (better TTFB, GDPR-friendlier).
+   Self-hosted fonts . no Google CDN (better TTFB, GDPR-friendlier).
    Brand spec: Outfit (display), Inter (body), JetBrains Mono (eyebrows).
    Cap font-weight at 600; ≥700 reads as cheap and is forbidden.
    ───────────────────────────────────────────────────────────────── */
@@ -14,7 +14,7 @@
 @layer base {
   :root {
     color-scheme: dark;
-    /* Brand tokens — keep names in sync with the brand pack README. */
+    /* Brand tokens . keep names in sync with the brand pack README. */
     --nocturne: #1A0E2C;
     --nocturne-deep: #0E0820;
     --nocturne-lift: #221440;
@@ -47,7 +47,7 @@
     color: var(--halo-soft);
   }
 
-  /* Visible focus ring everywhere — required for WCAG 2.2 */
+  /* Visible focus ring everywhere . required for WCAG 2.2 */
   :focus-visible {
     outline: 2px solid var(--halo-soft);
     outline-offset: 3px;
@@ -59,7 +59,7 @@
     font-weight: 600;
   }
 
-  /* prefers-reduced-motion — honor user OS setting */
+  /* prefers-reduced-motion . honor user OS setting */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.001ms !important;
@@ -79,7 +79,7 @@
     @apply mx-auto w-full max-w-wide px-6 md:px-8 lg:px-12;
   }
 
-  /* Skip link for keyboard users — visible on focus only */
+  /* Skip link for keyboard users . visible on focus only */
   .skip-link {
     @apply sr-only;
   }
@@ -94,7 +94,7 @@
     min-height: 44px; /* WCAG tap target */
   }
 
-  /* Primary CTA — Paper surface on Nocturne reads as "the spark on the card" */
+  /* Primary CTA . Paper surface on Nocturne reads as "the spark on the card" */
   .btn-primary {
     @apply btn bg-paper text-ink shadow-starlight-sm hover:shadow-starlight hover:-translate-y-0.5;
   }
@@ -107,7 +107,7 @@
     @apply btn text-paper/80 hover:text-paper hover:bg-white/5;
   }
 
-  /* Eyebrow — 11px JetBrains Mono uppercase per brand R: ALL CAPS only here */
+  /* Eyebrow . 11px JetBrains Mono uppercase per brand R: ALL CAPS only here */
   .eyebrow {
     @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono uppercase text-paper/85;
     font-size: 11px;
@@ -134,7 +134,7 @@
     color: transparent;
   }
 
-  /* Warm halo accent — for tiny flourishes (case-study metrics, step numbers) */
+  /* Warm halo accent . for tiny flourishes (case-study metrics, step numbers) */
   .gradient-text-glow {
     background: linear-gradient(135deg, #FFF1C9 0%, #F5D38A 60%, #E0B85E 100%);
     -webkit-background-clip: text;
@@ -146,7 +146,7 @@
     @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
   }
 
-  /* fade-up reveal — hooked up by IntersectionObserver in BaseLayout */
+  /* fade-up reveal . hooked up by IntersectionObserver in BaseLayout */
   .reveal {
     opacity: 0;
     transform: translateY(16px);
@@ -160,7 +160,7 @@
     transform: translateY(0);
   }
 
-  /* The brand sparkle — single source of truth for the geometry.
+  /* The brand sparkle . single source of truth for the geometry.
      Uses currentColor so the surrounding text colour flows through.
      Drop wherever a small inline mark belongs. */
   .spark-mark {
