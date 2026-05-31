@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Lyrava">
+  <defs>
+    <radialGradient id="twBg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#221440"></stop>
+      <stop offset="100%" stop-color="#0A041C"></stop>
+    </radialGradient>
+    <radialGradient id="twCore" cx="46%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="30%" stop-color="#FFFBF1"></stop>
+      <stop offset="65%" stop-color="#F8E4B2"></stop>
+      <stop offset="100%" stop-color="#F5D38A"></stop>
+    </radialGradient>
+    <radialGradient id="twHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE9B8" stop-opacity="0.45"></stop>
+      <stop offset="100%" stop-color="#F5D38A" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="twGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" in="SourceGraphic" result="b1"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="22" in="SourceGraphic" result="b2"></feGaussianBlur>
+      <feGaussianBlur stdDeviation="60" in="SourceGraphic" result="b3"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="b3"></feMergeNode>
+        <feMergeNode in="b2"></feMergeNode>
+        <feMergeNode in="b1"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="600" fill="url(#twBg)"></rect>
+  <circle cx="600" cy="280" r="340" fill="url(#twHalo)"></circle>
+  <g transform="translate(600,280)">
+    <g filter="url(#twGlow)" opacity="0.9">
+      <path d="M -16 -184 A 16 16 0 0 1 16 -184 A 168 168 0 0 0 184 -16 A 16 16 0 0 1 184 16 A 168 168 0 0 0 16 184 A 16 16 0 0 1 -16 184 A 168 168 0 0 0 -184 16 A 16 16 0 0 1 -184 -16 A 168 168 0 0 0 -16 -184 Z" fill="url(#twCore)"></path>
+    </g>
+    <path d="M -16 -184 A 16 16 0 0 1 16 -184 A 168 168 0 0 0 184 -16 A 16 16 0 0 1 184 16 A 168 168 0 0 0 16 184 A 16 16 0 0 1 -16 184 A 168 168 0 0 0 -184 16 A 16 16 0 0 1 -184 -16 A 168 168 0 0 0 -16 -184 Z" fill="url(#twCore)"></path>
+  </g>
+  <text x="600" y="520" text-anchor="middle" font-family="Outfit, Inter, system-ui, sans-serif" font-weight="600" font-size="96" letter-spacing="-3.8" fill="#F5EFE3">lyrava</text>
+</svg>

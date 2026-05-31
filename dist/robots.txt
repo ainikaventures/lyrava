@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block obvious form-handler endpoints from being indexed
+Disallow: /contact.php
+
+# LLM crawlers (ChatGPT, Claude, Perplexity, etc.) get the same access as
+# search engines. If you need to restrict any, add User-agent: blocks here.
+
+Sitemap: https://lyrava.com/sitemap-index.xml
+
+# Concise site map for AI crawlers (llmstxt.org format)
+# Available at: https://lyrava.com/llms.txt

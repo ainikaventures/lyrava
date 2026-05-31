@@ -1,0 +1,32 @@
+# lyrava
+
+> Data, automation and engineering for teams that want to move faster. An automation and AI agency working with teams in the UK and US, with delivery from India and governance from the UK.
+
+## Core pages
+
+- [Home](https://lyrava.com/): overview, services and how we work
+- [Services](https://lyrava.com/services): four automation practices for UK and US teams
+- [About](https://lyrava.com/about): who we are, how we engage, what we believe
+- [Case studies](https://lyrava.com/case-studies): selected engagements with metrics
+- [Blog](https://lyrava.com/blog): notes on automation, AI agents and revenue ops
+- [Contact](https://lyrava.com/contact): book a 30-minute discovery call
+
+## Services
+
+- [Business process and workflow automation](https://lyrava.com/services/business-process-automation): We connect the tools you already pay for so invoices, onboarding, approvals and reporting run without anyone copy-pasting at 11pm.
+- [AI agents and chatbots](https://lyrava.com/services/ai-agents-chatbots): GPT-4 and Claude agents that answer customer questions, triage tickets, and surface what your team needs from documents nobody reads.
+- [Marketing and sales automation](https://lyrava.com/services/marketing-sales-automation): CRM build-outs, lead scoring, multi-channel sequences, and attribution that tells you which channel actually paid.
+- [Web and data scraping](https://lyrava.com/services/web-data-scraping): Compliant scraping for price monitoring, lead lists, and market research. Respecting robots.txt, rate-limited, with audit trails.
+
+## Legal
+
+- [Privacy policy](https://lyrava.com/privacy-policy)
+- [Terms of service](https://lyrava.com/terms)
+- [Cookie policy](https://lyrava.com/cookies)
+
+## Optional
+
+- [Sitemap (XML)](https://lyrava.com/sitemap-index.xml)
+- Contact email: info@lyrava.com
+- Markets served: United Kingdom, United States
+- Delivery location: India

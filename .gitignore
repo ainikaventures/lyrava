@@ -1,6 +1,10 @@
-# build output
-dist/
+# Astro internal type cache — not needed in the repo
 .astro/
+
+# Note: dist/ is INTENTIONALLY tracked. It always holds the latest build
+# ready to upload to public_html/, so you never have to ask which files
+# to send. Run `npm run build` before committing changes and the dist/
+# diff goes up with them.
 
 # dependencies
 node_modules/
