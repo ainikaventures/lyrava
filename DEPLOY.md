@@ -92,6 +92,14 @@ Hit each of these URLs in a browser. Every one should load without a 404:
 - `https://YOUR-DOMAIN/some-page-that-does-not-exist` → should show the
   custom 404 page (proves `.htaccess` is active)
 
+> **Section URLs with same-named folders.** Where a top-level page exists
+> alongside a folder of the same name (e.g. `services.html` + `services/`),
+> Apache's mod_dir will 301-redirect `/services` to `/services/`. To prevent
+> a 404 at `/services/`, the build script copies the section's index into
+> the folder as `index.html` automatically (see
+> [scripts/postbuild-aliases.mjs](scripts/postbuild-aliases.mjs)). Make sure
+> `services/index.html` is included in your upload.
+
 If any **pretty URL** returns a 404 but the same URL with `.html` works
 (e.g. `/about.html` works but `/about` doesn't), the host's mod_rewrite
 either isn't loaded or `.htaccess` isn't being read. Talk to your host
