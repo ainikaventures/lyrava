@@ -27,9 +27,16 @@ const breadcrumbs = [
 
     <h2>1. Who we are</h2>
     <p>
-      {SITE.name} is a trading name. Our registered company name and number, and our
-      registered office address, will be added here once finalised. For any privacy
-      questions, contact us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      {SITE.name} is the trading brand of <strong>{SITE.legal.uk.name}</strong>,
+      a company registered in {SITE.legal.uk.jurisdiction} under company number
+      <strong>{SITE.legal.uk.companyNumber}</strong>. Delivery is provided by
+      our affiliated entity <strong>{SITE.legal.india.name}</strong> in
+      {SITE.legal.india.jurisdiction}. The data controller for personal
+      information collected through this site is {SITE.legal.uk.name}.
+    </p>
+    <p>
+      For any privacy questions, contact us at
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
     </p>
 
     <h2>2. The data we collect</h2>

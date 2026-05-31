@@ -35,6 +35,14 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE.name,
+    legalName: SITE.legal.uk.name,
+    // Companies House identifier — helps Google's Knowledge Graph disambiguate
+    // the entity from any other "lyrava" trading names.
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "UK Companies House",
+      value: SITE.legal.uk.companyNumber,
+    },
     url: SITE.url,
     logo: absoluteUrl("/brand/lyrava-mark-glow.svg"),
     description: SITE.description,

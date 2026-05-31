@@ -8,11 +8,23 @@
 export const SITE = {
   // Brand-correct (lowercase). Used as text content and as schema.org name.
   name: "lyrava",
-  // Capitalized form, only for legal/contractual references like the footer.
-  legalName: "Lyrava Ltd",
+  // Corporate structure: lyrava is the trading brand. The legal entities
+  // are Ainika Limited (UK) for governance and contracting, and Ainika
+  // Pvt Ltd (India) for delivery.
+  legal: {
+    uk: {
+      name: "Ainika Limited",
+      companyNumber: "17140562",
+      jurisdiction: "England and Wales",
+    },
+    india: {
+      name: "Ainika Pvt Ltd",
+      jurisdiction: "India",
+    },
+  },
   tagline: "Data, automation and engineering for teams that want to move faster.",
   description:
-    "lyrava is an automation and AI agency working with teams in the UK and US. We build process automations, AI agents, marketing and sales workflows, and data pipelines. Delivered from India, governed in the UK.",
+    "lyrava is the automation and AI consultancy brand of Ainika. We work with teams in the UK and US, contracting through Ainika Limited (UK) and delivering through Ainika Pvt Ltd (India).",
   url: "https://lyrava.com",
   defaultLocale: "en",
   locales: ["en-GB", "en-US"] as const,
