@@ -20,7 +20,16 @@
   RewriteCond %{REQUEST_URI} (.+)/$
   RewriteRule ^ %1 [L,R=301]
 
-  # Pretty URLs: serve /foo from /foo.html when it exists
+  # Clean URLs: 301-redirect external requests for /foo.html or /foo/index.html
+  # to the extensionless /foo. THE_REQUEST is the literal HTTP request line and
+  # is NOT updated by our internal rewrite below, so this only fires on real
+  # browser requests and never creates a loop.
+  RewriteCond %{THE_REQUEST} \s/+(.+?)/?index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # Pretty URLs: silently serve /foo from /foo.html when it exists
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
