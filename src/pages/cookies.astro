@@ -50,14 +50,18 @@ const breadcrumbs = [
     </p>
     <ul>
       <li>
-        <strong>Google Analytics 4</strong> (third-party, when enabled): sets cookies
-        like <code>_ga</code>, <code>_ga_*</code>. We anonymise IP addresses and don't
-        share data with Google for advertising. Retention is set to 14 months.
+        <strong>Google Analytics 4</strong> (third-party): sets cookies like
+        <code>_ga</code>, <code>_ga_*</code>. We use Google Consent Mode v2, so
+        before you accept, the analytics script runs in restricted mode (no
+        identifiers stored, no advertising signals). After you accept, it
+        records standard page-view analytics with anonymised IP. Retention is
+        14 months. We do not share data with Google for advertising.
       </li>
       <li>
-        <strong>Microsoft Clarity</strong> (third-party, when enabled): anonymous
-        session recordings and heatmaps to help us understand site usability. Cookies
-        such as <code>_clck</code>, <code>_clsk</code>, <code>MUID</code>.
+        <strong>Microsoft Clarity</strong> (third-party): anonymous session
+        recordings and heatmaps that help us understand how the site is used.
+        Cookies include <code>_clck</code>, <code>_clsk</code>,
+        <code>MUID</code>. Clarity does not load at all until you accept.
       </li>
     </ul>
 

@@ -54,7 +54,20 @@
         localStorage.setItem(KEY, value);
       } catch (e) {}
       banner.setAttribute("hidden", "");
-      // Hook for analytics: dispatch a custom event consumers can listen for
+
+      // Tell GA4 about the new consent state via Google Consent Mode v2.
+      // The default is denied; only Accept upgrades it to granted.
+      if (typeof window.gtag === "function") {
+        var state = value === "accept" ? "granted" : "denied";
+        window.gtag("consent", "update", {
+          ad_storage: state,
+          ad_user_data: state,
+          ad_personalization: state,
+          analytics_storage: state,
+        });
+      }
+
+      // Generic hook for any other consent-gated script (e.g. Clarity).
       window.dispatchEvent(new CustomEvent("lyrava:cookie-consent", { detail: value }));
     }
 

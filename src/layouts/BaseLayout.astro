@@ -29,19 +29,53 @@ const { class: bodyClass = "", ...seo } = Astro.props;
 
     <!--
       ============================================================
-      Analytics . disabled by default. Set IDs in src/lib/site.ts
-      then the snippets below will render automatically.
+      Analytics. IDs live in src/lib/site.ts.
+
+      GA4 uses Google Consent Mode v2: defaults to denied for
+      ad/analytics/personalisation storage so the script can load
+      pre-consent (collects only basic anonymous pings) and
+      "upgrades" to full tracking after the user clicks Accept on
+      the cookie banner. This keeps us compliant with UK/EU GDPR
+      while still measuring traffic.
+
+      Clarity is gated entirely on consent — it doesn't load until
+      Accept fires, so no recordings or heatmaps happen pre-consent.
       ============================================================
     -->
     {SITE.analytics.ga4MeasurementId && (
       <>
+        <script is:inline>
+          // 1. Consent Mode v2 defaults — must run BEFORE gtag.js loads
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          window.gtag = gtag;
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'granted',
+            security_storage: 'granted',
+            wait_for_update: 500
+          });
+
+          // If user previously accepted, restore consent immediately.
+          try {
+            if (localStorage.getItem('lyrava-cookie-consent') === 'accept') {
+              gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted'
+              });
+            }
+          } catch (e) { /* localStorage blocked — stay in denied state */ }
+        </script>
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${SITE.analytics.ga4MeasurementId}`}
         ></script>
         <script is:inline define:vars={{ id: SITE.analytics.ga4MeasurementId }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){ dataLayer.push(arguments); }
           gtag('js', new Date());
           gtag('config', id, { anonymize_ip: true });
         </script>
@@ -49,11 +83,20 @@ const { class: bodyClass = "", ...seo } = Astro.props;
     )}
     {SITE.analytics.clarityProjectId && (
       <script is:inline define:vars={{ id: SITE.analytics.clarityProjectId }}>
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", id);
+        // Clarity loads only after user accepts cookies (no pre-consent recording).
+        function loadClarity(){
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", id);
+        }
+        try {
+          if (localStorage.getItem('lyrava-cookie-consent') === 'accept') loadClarity();
+        } catch (e) {}
+        window.addEventListener('lyrava:cookie-consent', function(e){
+          if (e.detail === 'accept') loadClarity();
+        });
       </script>
     )}
   </head>

@@ -32,9 +32,9 @@ export const SITE = {
   },
   // Set when ready. Snippets stay disabled while these are blank.
   analytics: {
-    ga4MeasurementId: "" as string,
-    clarityProjectId: "" as string,
-    googleSiteVerification: "" as string,
+    ga4MeasurementId: "G-Z0FBXP2X89" as string,
+    clarityProjectId: "wzoi1u6c6e" as string,
+    googleSiteVerification: "" as string, // Add when you set up Search Console
   },
 };
 
